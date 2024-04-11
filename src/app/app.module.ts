@@ -8,6 +8,8 @@ import { StudentLoginComponent } from './home-page/student-login/student-login.c
 import { AdminLoginComponent } from './home-page/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './home-page/admin-register/admin-register.component';
 import { StudentRegisterComponent } from './home-page/student-register/student-register.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,9 @@ import { StudentRegisterComponent } from './home-page/student-register/student-r
     StudentLoginComponent,
     AdminLoginComponent,
     AdminRegisterComponent,
-    StudentRegisterComponent
+    StudentRegisterComponent,
+    AdminDashboardComponent,
+    StudentDashboardComponent
   ],
   imports: [
     BrowserModule,

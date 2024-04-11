@@ -1,0 +1,27 @@
+.sidebar {
+    height: 100vh;
+    background-color: #EBEBEB;
+    transition: width 0.3s ease-in-out;
+  }
+  .sidebar-link {
+    padding: 1rem;
+    color:black;
+    background-color: inherit;
+    border: 0;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .sidebar-link:hover {
+    background-color: #541675;
+    color: white;
+  }
+  .sidebar-link.active {
+    background-color:#541675;
+    color: white;
+  }
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  .sidebar.collapsed .sidebar-link span {
+    display: none;
+  }
+ 

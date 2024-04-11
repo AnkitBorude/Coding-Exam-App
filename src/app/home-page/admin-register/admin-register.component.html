@@ -1,22 +1,33 @@
 <div class="card">
     <div class="card-body">
-      <h5 class="card-title text-center mb-4">Admin Login</h5>
+      <h5 class="card-title text-center mb-3">Admin Registration</h5>
       <form>
-        <div class="mb-3">
+        <div class="mb-2">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your Name">
+        </div>
+        <div class="mb-2">
           <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="username" placeholder="Enter username">
+          <input type="text" class="form-control" id="username" placeholder="create a username">
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
+          <label for="email" class="form-label">email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your valid email">
+        </div>
+        <div class="mb-2">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter password">
+          <input type="password" class="form-control" id="password" placeholder="create a password">
         </div>
-        <div class="d-grid">
-          <button type="submit" class="btn btn-primary">Login</button>
+        <div class="mb-2">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="create a password">
         </div>
         <div class="d-grid">
             <button class="btn btn-success mt-2">Register</button>
-            <span class="text-blue">New Admin Register here</span>
           </div>
       </form>
+      <div class="d-grid mt-2">
+        <a routerLink="../admin-login" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Click here for Admin Login</a>
+      </div>
     </div>
   </div>

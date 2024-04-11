@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { homepageService } from '../home-page.service';
 
 @Component({
   selector: 'app-admin-register',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './admin-register.component.css'
 })
 export class AdminRegisterComponent {
-
+  homepages:homepageService;
+  constructor()
+  {
+    this.homepages=inject(homepageService);
+  }
+  ngOnInit(): void
+  {
+    this.homepages.registrationActivated.next(true);
+  }
 }

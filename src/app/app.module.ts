@@ -14,6 +14,7 @@ import { ExaminationComponent } from './examination/examination.component';
 import { CodingPlaygroundComponent } from './examination/coding-playground/coding-playground.component';
 import { SubmitCodeComponent } from './examination/submit-code/submit-code.component';
 import { QuestionComponent } from './examination/question/question.component';
+import { OutputComponent } from './examination/output/output.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { QuestionComponent } from './examination/question/question.component';
     ExaminationComponent,
     CodingPlaygroundComponent,
     SubmitCodeComponent,
-    QuestionComponent
+    QuestionComponent,
+    OutputComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
 import { ExaminationComponent } from './examination/examination.component';
 import { CodingPlaygroundComponent } from './examination/coding-playground/coding-playground.component';
 import { SubmitCodeComponent } from './examination/submit-code/submit-code.component';
+import { QuestionComponent } from './examination/question/question.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { SubmitCodeComponent } from './examination/submit-code/submit-code.compo
     StudentDashboardComponent,
     ExaminationComponent,
     CodingPlaygroundComponent,
-    SubmitCodeComponent
+    SubmitCodeComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,

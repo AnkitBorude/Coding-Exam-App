@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { python} from '@codemirror/lang-python';
-import {lineNumbers} from '@codemirror/gutter'
 import { EditorState, Extension } from '@codemirror/state';
 import { EditorView, keymap, highlightActiveLine } from '@codemirror/view';
 
@@ -8,20 +7,15 @@ import {
   syntaxHighlighting,
   defaultHighlightStyle,
 } from '@codemirror/language';
-
-import {
-  oneDark,
-  oneDarkTheme,
-  oneDarkHighlightStyle,
-} from '@codemirror/theme-one-dark';
 import { basicSetup } from 'codemirror';
+import { CodeService } from '../code.service';
 
 @Component({
   selector: 'app-coding-playground',
   templateUrl: './coding-playground.component.html',
   styleUrl: './coding-playground.component.css'
 })
-export class CodingPlaygroundComponent implements AfterViewInit {
+export class CodingPlaygroundComponent implements AfterViewInit,OnInit {
 document:Document;
 @ViewChild('editor')
 editor:ElementRef
@@ -32,7 +26,12 @@ MyExtension: Extension = [
   python(),
  
 ];
-constructor(){
+constructor(private codeService: CodeService){
+    codeService.runcode.subscribe(()=>{
+      codeService.textSource.next(this.editor.nativeElement.innerText);
+    })
+}
+ngOnInit(){
 
 }
   ngAfterViewInit(): void {
@@ -53,5 +52,9 @@ constructor(){
   
       const view = new EditorView({ state:Istate, parent: myEditorElement });
     }
+  }
+
+getCodeFromEditor() {
+  
 }
 }

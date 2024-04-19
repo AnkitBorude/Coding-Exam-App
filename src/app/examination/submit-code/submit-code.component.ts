@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CodeService } from '../code.service';
 
 @Component({
   selector: 'app-submit-code',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class SubmitCodeComponent {
 
+  constructor(private codeService: CodeService) {}
+  runCode()
+  {
+    this.codeService.runcode.next('');
+  }
 }

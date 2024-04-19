@@ -12,6 +12,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { ExaminationComponent } from './examination/examination.component';
 import { CodingPlaygroundComponent } from './examination/coding-playground/coding-playground.component';
+import { SubmitCodeComponent } from './examination/submit-code/submit-code.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { CodingPlaygroundComponent } from './examination/coding-playground/codin
     AdminDashboardComponent,
     StudentDashboardComponent,
     ExaminationComponent,
-    CodingPlaygroundComponent
+    CodingPlaygroundComponent,
+    SubmitCodeComponent
   ],
   imports: [
     BrowserModule,

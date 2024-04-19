@@ -1,6 +1,12 @@
 
-  .cm-editor {
+  #editorc {
     border: none;
     font-family: 'Courier New', monospace;
     font-size: 12px;
+    overflow-y: auto;
+    overflow-x: auto;
+    height: 100%;
+  }
+  .cm-content, .cm-gutters{
+    height: 100%;
   }

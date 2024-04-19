@@ -11,6 +11,7 @@ import { StudentRegisterComponent } from './home-page/student-register/student-r
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { ExaminationComponent } from './examination/examination.component';
+import { CodingPlaygroundComponent } from './examination/coding-playground/coding-playground.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { ExaminationComponent } from './examination/examination.component';
     StudentRegisterComponent,
     AdminDashboardComponent,
     StudentDashboardComponent,
-    ExaminationComponent
+    ExaminationComponent,
+    CodingPlaygroundComponent
   ],
   imports: [
     BrowserModule,

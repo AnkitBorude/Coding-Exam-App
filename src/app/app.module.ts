@@ -10,6 +10,7 @@ import { AdminRegisterComponent } from './home-page/admin-register/admin-registe
 import { StudentRegisterComponent } from './home-page/student-register/student-register.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { ExaminationComponent } from './examination/examination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
     AdminRegisterComponent,
     StudentRegisterComponent,
     AdminDashboardComponent,
-    StudentDashboardComponent
+    StudentDashboardComponent,
+    ExaminationComponent
   ],
   imports: [
     BrowserModule,

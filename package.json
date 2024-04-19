@@ -18,7 +18,12 @@
     "@angular/platform-browser": "^17.1.0",
     "@angular/platform-browser-dynamic": "^17.1.0",
     "@angular/router": "^17.1.0",
+    "@codemirror/basic-setup": "^0.20.0",
+    "@codemirror/gutter": "^0.19.9",
+    "@codemirror/lang-python": "github:codemirror/lang-python",
+    "@codemirror/theme-one-dark": "^6.1.2",
     "bootstrap": "^5.3.3",
+    "codemirror": "^6.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

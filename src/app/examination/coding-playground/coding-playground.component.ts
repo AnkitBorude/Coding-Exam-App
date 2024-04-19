@@ -25,6 +25,13 @@ export class CodingPlaygroundComponent implements AfterViewInit {
 document:Document;
 @ViewChild('editor')
 editor:ElementRef
+MyExtension: Extension = [
+  basicSetup,
+  syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
+  highlightActiveLine(),
+  python(),
+ 
+];
 constructor(){
 
 }
@@ -32,17 +39,11 @@ constructor(){
     {
       const myEditorElement = this.editor.nativeElement;
       let Istate!: EditorState;
-      const MyExtension: Extension = [
-        basicSetup,
-        syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
-        highlightActiveLine(),
-        python(),
-       
-      ];
+      
     
       try {
         Istate = EditorState.create({
-          extensions: [MyExtension],
+          extensions: [this.MyExtension],
           doc:"Type Your Code here",
           
         });

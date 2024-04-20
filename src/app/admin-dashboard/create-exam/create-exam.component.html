@@ -1,1 +1,81 @@
-<p>create-exam works!</p>
+<div class="container">
+    <!-- Exam Form -->
+    <div class="row">
+      <h2 class="my-4">Exam Form</h2>
+      <form>
+        <div class="form-group">
+          <label for="examName">Name of the Exam</label>
+          <input type="text" class="form-control" id="examName" required>
+        </div>
+        <div class="form-group">
+          <label for="totalTime">Total Time</label>
+          <input type="text" class="form-control" id="totalTime" required>
+        </div>
+        <div class="form-group">
+          <label for="attendBeforeDate">Attend Before Date</label>
+          <input type="date" class="form-control" id="attendBeforeDate" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-5">Submit</button>
+      </form>
+    </div>
+    <hr>
+  
+    <!-- Display Existing Exams -->
+    <div class="row">
+      <div class="col-md">
+        <!-- Sample Card -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <h5 class="card-title">Exam Name</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Exam ID: #12345</h6>
+          </div>
+          <div class="card-body">
+            <p>Total Questions: 20</p>
+            <p>Total Time: 90 minutes</p>
+            <p>Due Date: April 30, 2024</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-danger btn-sm float-start">Delete Exam</button>
+            <button class="btn btn-primary btn-sm float-end">Add Questions</button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <!-- End of Sample Card -->
+  
+        <!-- Repeat this structure for each existing exam -->
+
+        <div class="card mb-3">
+            <div class="card-header">
+              <h5 class="card-title">Exam Name</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Exam ID: #12345</h6>
+            </div>
+            <div class="card-body">
+              <p>Total Questions: 20</p>
+              <p>Total Time: 90 minutes</p>
+              <p>Due Date: April 30, 2024</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-danger btn-sm float-start">Delete Exam</button>
+              <button class="btn btn-primary btn-sm float-end">Add Questions</button>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">
+              <h5 class="card-title">Exam Name</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Exam ID: #12345</h6>
+            </div>
+            <div class="card-body">
+              <p>Total Questions: 20</p>
+              <p>Total Time: 90 minutes</p>
+              <p>Due Date: April 30, 2024</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-danger btn-sm float-start">Delete Exam</button>
+              <button class="btn btn-primary btn-sm float-end">Add Questions</button>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -1,33 +1,29 @@
 <div class="card">
-    <div class="card-body">
-      <h5 class="card-title text-center mb-3">Admin Registration</h5>
-      <form>
-        <div class="mb-2">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your Name">
-        </div>
-        <div class="mb-2">
-          <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="username" placeholder="create a username">
-        </div>
-        <div class="mb-2">
-          <label for="email" class="form-label">email</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter your valid email">
-        </div>
-        <div class="mb-2">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="create a password">
-        </div>
-        <div class="mb-2">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="create a password">
-        </div>
-        <div class="d-grid">
-            <button class="btn btn-success mt-2">Register</button>
-          </div>
-      </form>
-      <div class="d-grid mt-2">
-        <a routerLink="../admin-login" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Click here for Admin Login</a>
+  <div class="card-body">
+    <h5 class="card-title text-center mb-3">Admin Registration</h5>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="mb-2">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="admin_name" placeholder="Enter your Name">
       </div>
+      <div class="mb-2">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" formControlName="admin_user_name" placeholder="create a username">
+      </div>
+      <div class="mb-2">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="admin_email" placeholder="Enter your valid email">
+      </div>
+      <div class="mb-2">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="admin_password" placeholder="create a password">
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success mt-2" [disabled]="registrationForm.invalid">Register</button>
+      </div>
+    </form>
+    <div class="d-grid mt-2">
+      <a routerLink="../admin-login" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Click here for Admin Login</a>
     </div>
   </div>
+</div>

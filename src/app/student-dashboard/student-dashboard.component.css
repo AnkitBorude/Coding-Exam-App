@@ -2,6 +2,7 @@
     height: 100vh;
     background-color: #EBEBEB;
     transition: width 0.3s ease-in-out;
+    position: fixed;
   }
   .sidebar-link {
     padding: 1rem;
@@ -24,4 +25,8 @@
   .sidebar.collapsed .sidebar-link span {
     display: none;
   }
- 
+  .content{
+    margin-left: 250px;
+    overflow-y: auto;
+  }
+  

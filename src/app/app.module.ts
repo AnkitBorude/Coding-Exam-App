@@ -18,6 +18,7 @@ import { OutputComponent } from './examination/output/output.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateExamComponent } from './admin-dashboard/create-exam/create-exam.component';
 import { CreateQuestionsComponent } from './admin-dashboard/create-exam/create-questions/create-questions.component';
+import { AttendExamComponent } from './student-dashboard/attend-exam/attend-exam.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { CreateQuestionsComponent } from './admin-dashboard/create-exam/create-q
     QuestionComponent,
     OutputComponent,
     CreateExamComponent,
-    CreateQuestionsComponent
+    CreateQuestionsComponent,
+    AttendExamComponent
   ],
   imports: [
     BrowserModule,

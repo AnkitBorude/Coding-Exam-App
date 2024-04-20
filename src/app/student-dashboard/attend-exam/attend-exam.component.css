@@ -1,0 +1,32 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Styling the card */
+  .card {
+    width: 400px;
+    background-color: #f0f0f0; /* Light gray background */
+    border: 2px solid #6c757d; /* Dark gray border */
+  }
+  /* Styling the header */
+  .card-header {
+    background-color: #343a40; /* Dark gray header */
+    color: white; /* White text */
+  }
+  /* Styling the input box */
+  .form-control {
+    border-color: #6c757d; /* Dark gray border for input */
+    border-radius: 10px; /* Rounded corners */
+  }
+  /* Styling the attend button */
+  .btn-primary {
+    background-color: #2cc427; /* Blue button */
+    border-color: #4eaf28; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+  }
+  .custom-alert {
+    width: 350px;
+    border-radius: 5px; /* Rounded corners */
+  }

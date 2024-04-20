@@ -16,6 +16,8 @@ import { SubmitCodeComponent } from './examination/submit-code/submit-code.compo
 import { QuestionComponent } from './examination/question/question.component';
 import { OutputComponent } from './examination/output/output.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateExamComponent } from './admin-dashboard/create-exam/create-exam.component';
+import { CreateQuestionsComponent } from './admin-dashboard/create-exam/create-questions/create-questions.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
     CodingPlaygroundComponent,
     SubmitCodeComponent,
     QuestionComponent,
-    OutputComponent
+    OutputComponent,
+    CreateExamComponent,
+    CreateQuestionsComponent
   ],
   imports: [
     BrowserModule,

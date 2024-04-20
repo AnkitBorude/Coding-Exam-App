@@ -5,7 +5,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
   })
 export class CodeService {
     public runcode=new Subject();
-    public textSource = new BehaviorSubject<string>('');
+    public textSource = new BehaviorSubject<any>('');
 
     constructor() {}
   

@@ -15,6 +15,7 @@ import { CodingPlaygroundComponent } from './examination/coding-playground/codin
 import { SubmitCodeComponent } from './examination/submit-code/submit-code.component';
 import { QuestionComponent } from './examination/question/question.component';
 import { OutputComponent } from './examination/output/output.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { OutputComponent } from './examination/output/output.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

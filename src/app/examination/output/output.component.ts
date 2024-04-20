@@ -7,7 +7,7 @@ import { CodeService } from '../code.service';
   styleUrl: './output.component.css'
 })
 export class OutputComponent implements OnInit {
-Code:string=''
+Code:any=''
 constructor(private codeService: CodeService){}
 ngOnInit()
 {

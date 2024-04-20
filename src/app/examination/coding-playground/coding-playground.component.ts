@@ -9,6 +9,7 @@ import {
 } from '@codemirror/language';
 import { basicSetup } from 'codemirror';
 import { CodeService } from '../code.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-coding-playground',
@@ -19,6 +20,9 @@ export class CodingPlaygroundComponent implements AfterViewInit,OnInit {
 document:Document;
 @ViewChild('editor')
 editor:ElementRef
+
+myEditor:EditorView | null=null;
+http:HttpClient;
 MyExtension: Extension = [
   basicSetup,
   syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
@@ -28,8 +32,10 @@ MyExtension: Extension = [
 ];
 constructor(private codeService: CodeService){
     codeService.runcode.subscribe(()=>{
-      codeService.textSource.next(this.editor.nativeElement.innerText);
+      //codeService.textSource.next(this.myEditor.state.doc.toString());//accessign the code
+      this.submitCode();
     })
+    this.http=inject(HttpClient);
 }
 ngOnInit(){
 
@@ -50,11 +56,37 @@ ngOnInit(){
         console.error(e);
       }
   
-      const view = new EditorView({ state:Istate, parent: myEditorElement });
+      this.myEditor = new EditorView({ state:Istate, parent: myEditorElement });
     }
   }
 
-getCodeFromEditor() {
+  submitCode() {
+    if (this.editor) {
+      const sourceCode = this.myEditor.state.doc.toString();
+      const languageId = 92; // Python language ID
   
-}
+      const headers = new HttpHeaders({
+        'X-RapidAPI-Key': 'a9598f2502mshda9f3d2a3ea1f6bp1fb17cjsn6b19fcc65348',
+        'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com',
+        'Content-Type': 'application/json',
+      });
+  
+      const body = {
+        source_code: sourceCode,
+        language_id: languageId,
+      };
+  
+      const url = 'https://judge0-ce.p.rapidapi.com/submissions/?base64_encoded=false&wait=true';
+  
+      this.http.post(url, body, { headers }).subscribe(
+        (response) => {
+          this.codeService.textSource.next(response);
+        },
+        (error) => {
+          console.error('Error submitting code:', error);
+          // Handle the error here
+        }
+      );
+    }
+  }
 }

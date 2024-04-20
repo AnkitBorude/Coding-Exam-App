@@ -1,22 +1,25 @@
 <div class="card">
-    <div class="card-body">
-      <h5 class="card-title text-center mb-4">Student Login</h5>
-      <form>
-        <div class="mb-3">
-          <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="username" placeholder="Enter username">
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter password">
-        </div>
-        <div class="d-grid">
-          <button type="submit" class="btn btn-primary">Login</button>
-        </div>
-        <div class="d-grid">
-          <a class="btn btn-success mt-2" [routerLink]="['../','student-register']">Register</a>
-          <span class="text-blue">New student Register here</span>
-        </div>
-      </form>
+  <div class="card-body">
+    <h5 class="card-title text-center mb-4">Student Login</h5>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" formControlName="student_user_name" placeholder="Enter username">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="student_password" placeholder="Enter password">
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+      <div class="d-grid">
+        <a class="btn btn-success mt-2" [routerLink]="['../','student-register']">Register</a>
+        <span class="text-blue">New student Register here</span>
+      </div>
+    </form>
+    <div *ngIf="alertMessage" class="alert mt-3" [ngClass]="{'alert-success': alertType === 'success', 'alert-danger': alertType === 'danger'}">
+      {{ alertMessage }}
     </div>
   </div>
+</div>

@@ -1,21 +1,21 @@
 <div class="container">
     <!-- Exam Form -->
     <div class="row">
-      <h2 class="my-4">Exam Form</h2>
-      <form>
+      <h2 class="my-4">Create Exam</h2>
+      <form [formGroup]="examForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="examName">Name of the Exam</label>
-          <input type="text" class="form-control" id="examName" required>
+          <input type="text" class="form-control" id="examName" formControlName="examName" required>
         </div>
         <div class="form-group">
-          <label for="totalTime">Total Time</label>
-          <input type="text" class="form-control" id="totalTime" required>
+          <label for="totalTime">Total Time In Minutes</label>
+          <input type="text" class="form-control" id="totalTime" formControlName="totalTime" required>
         </div>
         <div class="form-group">
           <label for="attendBeforeDate">Attend Before Date</label>
-          <input type="date" class="form-control" id="attendBeforeDate" required>
+          <input type="date" class="form-control" id="attendBeforeDate" formControlName="attendBeforeDate" required>
         </div>
-        <button type="submit" class="btn btn-primary mt-5">Submit</button>
+        <button type="submit" class="btn btn-primary mt-5" [disabled]="!examForm.valid">Submit</button>
       </form>
     </div>
     <hr>
@@ -23,6 +23,23 @@
     <!-- Display Existing Exams -->
     <div class="row">
       <div class="col-md">
+        <!--Dynamic Card--->
+        <div class="card mb-3" *ngFor="let exam of examService.exams; let i = index">
+          <div class="card-header">
+            <h5 class="card-title">{{ exam.examName }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Exam ID: #{{ exam.examId }}</h6>
+          </div>
+          <div class="card-body">
+            <p>Total Questions: N/A</p>
+            <p>Total Time: {{ exam.totalTime }} minutes</p>
+            <p>Due Date: {{ exam.attendBeforeDate | date }}</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-danger btn-sm float-start" (click)="deleteExam(exam.examId)">Delete Exam</button>
+            <button class="btn btn-primary btn-sm float-end">Add Questions</button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
         <!-- Sample Card -->
         <div class="card mb-3">
           <div class="card-header">

@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateExamComponent } from './admin-dashboard/create-exam/create-exam.component';
 import { CreateQuestionsComponent } from './admin-dashboard/create-exam/create-questions/create-questions.component';
 import { AttendExamComponent } from './student-dashboard/attend-exam/attend-exam.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,9 @@ import { AttendExamComponent } from './student-dashboard/attend-exam/attend-exam
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

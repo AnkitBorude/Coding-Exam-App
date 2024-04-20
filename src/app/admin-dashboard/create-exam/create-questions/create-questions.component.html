@@ -1,35 +1,46 @@
 <div class="container">
-    <!-- Question Form -->
-    <div class="row">
-        <div class="col-md-8">
-            <h3>Total Questions: <span id="totalQuestions">0</span></h3>
-            <h3>Total Marks: <span id="totalMarks">0</span></h3>
-        </div>
-            <div class="col-md-4 mt-5">
-              <button id="saveQuestions" class="btn btn-success">Save</button>
-              <button id="saveQuestions" class="btn btn-danger m-2">Go Back</button>
-        </div>
-      <form>
-        <div class="form-group">
-          <label for="question">Question</label>
-          <textarea class="form-control" id="question" rows="3" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="expectedOutput">Expected Output</label>
-          <textarea class="form-control" id="expectedOutput" rows="3" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="marks">Marks</label>
-          <input type="number" class="form-control" id="marks" required>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">Add Question</button>
-      </form>
+  <!-- Question Form -->
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Total Questions: <span>{{ questionService.getTotalQuestions() }}</span></h3>
+      <h3>Total Marks: <span>{{ questionService.getTotalMarks() }}</span></h3>
     </div>
-    <hr>
-  
+    <div class="col-md-4 mt-5">
+      <button id="saveQuestions" class="btn btn-success">Save</button>
+      <button id="saveQuestions" class="btn btn-danger m-2">Go Back</button>
+    </div>
+    <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="question">Question</label>
+        <textarea class="form-control" id="question" rows="3" formControlName="question" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="expectedOutput">Expected Output</label>
+        <textarea class="form-control" id="expectedOutput" rows="3" formControlName="expectedOutput" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="marks">Marks</label>
+        <input type="number" class="form-control" id="marks" formControlName="marks" required>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="!questionForm.valid">Add Question</button>
+    </form>
+  </div>
+  <hr>
     <!-- Display Added Questions -->
     <div class="row">
       <div class="col-md">
+        <div class="card mb-3" *ngFor="let question of questionService.questions; let i = index">
+          <div class="card-body">
+            <h5 class="card-title">Question</h5>
+            <p class="card-text">{{ question.question }}</p>
+            <h6 class="card-subtitle mb-2 text-muted">Expected Output:</h6>
+            <p class="card-text">{{ question.expectedOutput }}</p>
+            <p class="card-text">Marks: {{ question.marks }}</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-danger btn-sm float-start" (click)="deleteQuestion(i)">Delete Question</button>
+          </div>
+        </div>
         <!-- Sample Question Card -->
         <div class="card mb-3">
           <div class="card-body">

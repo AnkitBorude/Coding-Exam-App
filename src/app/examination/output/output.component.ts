@@ -8,11 +8,20 @@ import { CodeService } from '../code.service';
 })
 export class OutputComponent implements OnInit {
 Code:any=''
+Output:string;
 constructor(private codeService: CodeService){}
 ngOnInit()
 {
   this.codeService.textSource.subscribe((data)=>{
     this.Code=data;
+    console.log(this.Code);
+    if(data.stderr==null)
+      {
+        this.Output=data.stdout;
+      }
+      else{
+        this.Output=data.stderr;
+      }
   })
 }
 }

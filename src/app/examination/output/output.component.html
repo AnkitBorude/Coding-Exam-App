@@ -1,3 +1,5 @@
 <div  style="height: 100%;" class="container-fluid p-0">
-    <textarea style="height: 100%; width: 100%;">{{Code.stdout}}</textarea>
+    <textarea style="height: 100%; width: 100%;" [ngClass]="{'text-danger':Code.stderr!=null}">
+       {{Output}}
+    </textarea>
 </div>

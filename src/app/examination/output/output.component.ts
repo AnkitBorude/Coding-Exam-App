@@ -24,4 +24,7 @@ ngOnInit()
       }
   })
 }
+preventPaste(event: ClipboardEvent) {
+  event.preventDefault();
+}
 }

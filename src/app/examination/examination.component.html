@@ -1,15 +1,14 @@
 <div class="container-fluid" style="height: 100vh;">
     <div class="row" style="height: 10%;">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">{{exam.exam_name}}</a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" style="color:antiquewhite">{{exam.exam_name}}</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
             </li>
             <ng-container *ngIf="exam">
               <li class="nav-item" *ngFor="let question of exam.coding_questions; let i = index">
-                <a class="nav-link" (click)="currentQuestionIndex = i">Q.{{ i + 1 }}</a>
+                <a class="nav-link text-white" style="cursor: pointer;" (click)="currentQuestionIndex = i">Q.{{ i + 1 }}</a>
               </li>
             </ng-container>
           </ul>
@@ -17,13 +16,14 @@
       </nav>
     </div>
     <div class="row" style="height:90%">
-      <div class="col-3" style="height: 100%; border: 2px solid black">
+      <div class="col-3" style="height: 100%; border: 2px solid black;background-color: black; color: aliceblue;">
         <!-- Content for the second column -->
         <ng-container *ngIf="exam && exam.coding_questions[currentQuestionIndex]">
           <h4>Question {{ currentQuestionIndex + 1 }}</h4>
-          <h5>Question</h5>
+          <h5 class="mt-5">Question</h5>
           <p>{{ exam.coding_questions[currentQuestionIndex].coding_question }}</p>
-          <h5>Expected Output</h5>
+          <h5 class="mt-5">Expected Output</h5>
+          <p>{{ exam.coding_questions[currentQuestionIndex].q_expected_output }}</p>
         </ng-container>
       </div>
       <div class="col-9 p-0">
@@ -33,7 +33,7 @@
         <div class="col" style="height: 7%;">
           <app-submit-code></app-submit-code>
         </div>
-        <div class="col" style="height: 23%; border: 1px solid black">
+        <div class="col output-box" style="height: 23%; border: 1px solid black">
           <app-output></app-output>
         </div>
       </div>

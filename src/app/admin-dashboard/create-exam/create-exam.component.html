@@ -36,7 +36,7 @@
           </div>
           <div class="card-footer">
             <button class="btn btn-danger btn-sm float-start" (click)="deleteExam(exam.exam_id)">Delete Exam</button>
-            <button class="btn btn-primary btn-sm float-end">Add Questions</button>
+            <a class="btn btn-primary btn-sm float-end" [routerLink]="['../add-questions', exam.exam_id]">Add Questions</a>
             <div class="clearfix"></div>
           </div>
         </div>

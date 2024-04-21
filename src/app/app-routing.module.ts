@@ -24,9 +24,8 @@ const routes: Routes = [
   ]},
   {path:'admin-dashboard',component:AdminDashboardComponent,children:[
     { path: '', redirectTo: 'create-exam', pathMatch: 'full' },
-    { path: 'create-exam', component:CreateExamComponent,children:[
-      {path:'add-questions/:exam_id',component:CreateQuestionsComponent}
-    ]},
+    { path: 'create-exam', component:CreateExamComponent},
+    {path:'add-questions/:exam_id',component:CreateQuestionsComponent}
   ]},
   {path:'student-dashboard',component:StudentDashboardComponent},
   {path:'examination',component:ExaminationComponent}

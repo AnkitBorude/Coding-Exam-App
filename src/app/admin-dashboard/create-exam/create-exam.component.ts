@@ -36,8 +36,6 @@ export class CreateExamComponent {
         fk_admin_id: this.adminId,
       };
       this.examService.addExam(exam).subscribe(addedExam => {
-        console.log("Added Exam");
-        console.log(addedExam);
         this.examService.exams.push(addedExam);
         this.examForm.reset();
       });

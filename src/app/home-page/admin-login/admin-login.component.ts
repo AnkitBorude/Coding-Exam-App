@@ -3,6 +3,7 @@ import { homepageService } from '../home-page.service';
 import { AdminService } from '../../admin.service';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -15,7 +16,7 @@ export class AdminLoginComponent implements OnInit {
   loginForm:FormGroup;
   alertMessage: string | null = null;
   alertType: string | null = null;
-  constructor(private fb: FormBuilder, private http: HttpClient)
+  constructor(private fb: FormBuilder, private http: HttpClient,private router:Router)
   {
     this.homepages=inject(homepageService);
     this.admin=inject(AdminService);
@@ -37,7 +38,8 @@ export class AdminLoginComponent implements OnInit {
             this.alertMessage = response.message || 'Login successful, thank you';
             this.alertType = 'success';
             console.log(response.adminId);
-            this.admin.setAdminId(response.adminId);
+            this.admin.setAdminId(+response.adminId);
+            this.router.navigate(['/admin-dashboard']);
           },
           (error: any) => {
             this.alertMessage = error.error.error;

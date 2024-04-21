@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import {  Router } from '@angular/router';
+import { StudentService } from '../../student.service';
 
 @Component({
   selector: 'app-attend-exam',
@@ -8,10 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AttendExamComponent {
   examCode: string = '';
-  studentId: number = 1; // Replace with the actual student ID
+  studentId: number = this.student.getStudentId(); // Replace with the actual student ID
   message: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private router:Router,public student:StudentService) { }
 
   checkAttendance() {
     const examId =  parseInt(this.examCode); // Implement this function to get exam ID from exam code
@@ -21,6 +23,7 @@ export class AttendExamComponent {
       .subscribe(
         (response: any) => {
           this.message = response.message;
+          this.router.navigate(['/examination',examId,this.studentId]);
         },
         (error) => {
           console.error('Error checking attendance:', error);

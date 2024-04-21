@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class StudentService {
-  studentId: string;
+  studentID: number;
 
-  setStudentId(id: string) {
-    this.studentId = id;
+  setStudentId(id: number) {
+    this.studentID = id;
   }
 
-  getStudentId(): string {
-    return this.studentId;
+  getStudentId(): number {
+    return this.studentID;
   }
 }

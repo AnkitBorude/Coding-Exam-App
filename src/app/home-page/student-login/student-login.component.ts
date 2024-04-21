@@ -3,6 +3,7 @@ import { homepageService } from '../home-page.service';
 import { StudentService } from '../../student.service';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-login',
@@ -16,7 +17,7 @@ export class StudentLoginComponent {
   alertMessage: string | null = null;
   alertType: string | null = null;
 
-  constructor(private fb: FormBuilder, private http: HttpClient)
+  constructor(private fb: FormBuilder, private http: HttpClient,private router:Router)
   {
     this.homepages=inject(homepageService);
     this.student=inject(StudentService);
@@ -38,7 +39,8 @@ export class StudentLoginComponent {
             this.alertMessage = response.message || 'Registration successful, thank you';
             this.alertType = 'success';
             console.log(response.studentId);
-            this.student.setStudentId(response.studentId)
+            this.student.setStudentId(+response.studentId);
+            this.router.navigate(['/student-dashboard']);
           },
           (error: any) => {
             this.alertMessage = error.error.error;

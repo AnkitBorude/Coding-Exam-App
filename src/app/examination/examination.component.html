@@ -1,77 +1,41 @@
 <div class="container-fluid" style="height: 100vh;">
     <div class="row" style="height: 10%;">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Q.1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 5</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 6</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 7</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 8</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 9</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 10</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 11</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 12</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 13</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 14</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 15</a>
-                    </li>
-                    <!-- Add more links as needed -->
-                </ul>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">{{exam.exam_name}}</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <ng-container *ngIf="exam">
+              <li class="nav-item" *ngFor="let question of exam.coding_questions; let i = index">
+                <a class="nav-link" (click)="currentQuestionIndex = i">Q.{{ i + 1 }}</a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </nav>
     </div>
     <div class="row" style="height:90%">
-        
-        <div class="col-3" style="height: 100%; border: 2px solid black">
-            <!-- Content for the second column -->
+      <div class="col-3" style="height: 100%; border: 2px solid black">
+        <!-- Content for the second column -->
+        <ng-container *ngIf="exam && exam.coding_questions[currentQuestionIndex]">
+          <h4>Question {{ currentQuestionIndex + 1 }}</h4>
+          <h5>Question</h5>
+          <p>{{ exam.coding_questions[currentQuestionIndex].coding_question }}</p>
+          <h5>Expected Output</h5>
+        </ng-container>
+      </div>
+      <div class="col-9 p-0">
+        <div class="col" style="height: 70%;">
+          <app-coding-playground></app-coding-playground>
         </div>
-        <div class="col-9 p-0" style="height: 100%; border: 2px solid red;">
-                <div class="col" style="height: 70%; border: 2px solid green">
-                   <app-coding-playground></app-coding-playground>
-                </div>
-                <div class="col" style="height: 7%; border: 2px solid green">
-                   <app-submit-code></app-submit-code>
-                </div>
-                <div class="col" style="height: 23%; border: 2px solid yellow">
-                    <app-output></app-output>
-                </div>
+        <div class="col" style="height: 7%;">
+          <app-submit-code></app-submit-code>
         </div>
+        <div class="col" style="height: 23%; border: 1px solid black">
+          <app-output></app-output>
+        </div>
+      </div>
     </div>
-</div>
+  </div>

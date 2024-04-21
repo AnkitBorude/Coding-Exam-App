@@ -28,7 +28,7 @@ const routes: Routes = [
     {path:'add-questions/:exam_id',component:CreateQuestionsComponent}
   ]},
   {path:'student-dashboard',component:StudentDashboardComponent},
-  {path:'examination',component:ExaminationComponent}
+  {path:'examination/:exam_id/:student_id',component:ExaminationComponent}
 ]}
 ];
 

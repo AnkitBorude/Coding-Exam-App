@@ -7,7 +7,7 @@
           <input type="text" class="form-control form-control-md mt-5" placeholder="Enter Exam Code" [(ngModel)]="examCode" name="examid">
         </div>
         <button type="button" class="btn btn-primary btn-lg mt-5" (click)="checkAttendance()">Attend</button>
-        <div class="alert alert-primary fade show mt-5" role="alert">{{ message }}</div>
+        <div class="alert alert-primary fade show mt-5" role="alert" [ariaDisabled]="message==null">{{ message }}</div>
       </form>
     </div>
   </div>

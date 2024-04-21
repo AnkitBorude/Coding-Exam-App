@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { QuestionApiService } from './create-question-api.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,25 +8,43 @@ import { Injectable } from '@angular/core';
 export class QuestionService {
   questions: Question[] = [];
 
-  addQuestion(question: Question) {
-    this.questions.push(question);
+  constructor(private questionApiService: QuestionApiService) { }
+
+  getQuestions(examId: number): Observable<Question[]> {
+    return this.questionApiService.getQuestions(examId);
   }
 
-  removeQuestion(index: number) {
+  addQuestion(examId: number, question: Question): Observable<Question> {
+    return this.questionApiService.addQuestion(examId, question);
+  }
+
+  removeQuestion(examId: number, index: number) {
+    const question = this.questions[index];
+    this.questionApiService.deleteQuestion(examId, question.question_id).subscribe();
     this.questions.splice(index, 1);
   }
 
-  getTotalQuestions(): number {
+  getTotalQuestions():number{
     return this.questions.length;
-  }
-
-  getTotalMarks(): number {
-    return this.questions.reduce((total, question) => total + question.marks, 0);
   }
 }
 
 export interface Question {
-  question: string;
-  expectedOutput: string;
-  marks: number;
+  question_id: number;
+  q_expected_output: string;
+  coding_question: string;
+  test_cases?: TestCase[];
+  answers?: Answer[];
+  marks:number;
+}
+
+interface TestCase {
+  test_case_id: number;
+  test_case: string;
+}
+
+interface Answer {
+  answer_id: number;
+  answer_code: string;
+  answer_isCorrect: boolean;
 }

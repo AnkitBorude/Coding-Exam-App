@@ -3,7 +3,6 @@
   <div class="row">
     <div class="col-md-8">
       <h3>Total Questions: <span>{{ questionService.getTotalQuestions() }}</span></h3>
-      <h3>Total Marks: <span>{{ questionService.getTotalMarks() }}</span></h3>
     </div>
     <div class="col-md-4 mt-5">
       <button id="saveQuestions" class="btn btn-success">Save</button>
@@ -32,9 +31,10 @@
         <div class="card mb-3" *ngFor="let question of questionService.questions; let i = index">
           <div class="card-body">
             <h5 class="card-title">Question</h5>
-            <p class="card-text">{{ question.question }}</p>
+            <p class="card-text"> Question Id :- {{question.question_id}}</p>
+            <p class="card-text">{{ question.coding_question }}</p>
             <h6 class="card-subtitle mb-2 text-muted">Expected Output:</h6>
-            <p class="card-text">{{ question.expectedOutput }}</p>
+            <p class="card-text">{{ question.q_expected_output }}</p>
             <p class="card-text">Marks: {{ question.marks }}</p>
           </div>
           <div class="card-footer">

@@ -8,9 +8,12 @@ export class StudentService {
 
   setStudentId(id: number) {
     this.studentID = id;
+    localStorage.setItem('studentID',''+id);
   }
 
   getStudentId(): number {
+    const item=localStorage.getItem('studentID');
+    this.studentID= +item;
     return this.studentID;
   }
 }

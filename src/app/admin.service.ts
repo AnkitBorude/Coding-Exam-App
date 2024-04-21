@@ -8,9 +8,12 @@ export class AdminService {
 
   setAdminId(id: number) {
     this.adminId = id;
+    localStorage.setItem('adminID',''+id);
   }
 
   getAdminId(): number {
+    const item=localStorage.getItem('adminID');
+    this.adminId= +item;
     return this.adminId;
   }
 }

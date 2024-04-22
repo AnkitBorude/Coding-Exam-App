@@ -20,6 +20,7 @@ import { CreateExamComponent } from './admin-dashboard/create-exam/create-exam.c
 import { CreateQuestionsComponent } from './admin-dashboard/create-exam/create-questions/create-questions.component';
 import { AttendExamComponent } from './student-dashboard/attend-exam/attend-exam.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRouteSnapshot } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,

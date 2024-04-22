@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Question, QuestionService } from './create-question.service';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-create-questions',
@@ -9,15 +10,20 @@ import { Question, QuestionService } from './create-question.service';
 })
 export class CreateQuestionsComponent {
   questionForm: FormGroup;
-
-  constructor(private fb: FormBuilder, public questionService: QuestionService) {
+  examId:number ;
+  constructor(private fb: FormBuilder, public questionService: QuestionService,private route:ActivatedRoute) {
     this.questionForm = this.fb.group({
       question: ['', Validators.required],
       expectedOutput: ['', Validators.required],
       marks: ['', Validators.required]
     });
+    
   }
-
+  setExamId()
+  {
+    this.examId = +this.route.snapshot.params['exam_id'];
+    console.log(this.examId);
+  }
   // onSubmit() {
   //   if (this.questionForm.valid) {
   //     const question: Question = {
@@ -37,7 +43,7 @@ export class CreateQuestionsComponent {
         q_expected_output: this.questionForm.value.expectedOutput,
         marks: this.questionForm.value.marks
       };
-      const exam_id = 1; // Replace with the actual examId
+      const exam_id = this.examId;
       this.questionService.addQuestion(exam_id, question).subscribe(addedQuestion => {
         this.questionService.questions.push(addedQuestion);
         this.questionForm.reset();
@@ -49,12 +55,13 @@ export class CreateQuestionsComponent {
   // }
 
   deleteQuestion(index: number) {
-    const examId = 1; // Replace with the actual examId
+    const examId = this.examId;
     this.questionService.removeQuestion(examId, index);
   }
   
   ngOnInit() {
-    const examId = 1; // Replace with the actual examId
+    this.setExamId();
+    const examId = this.examId; 
     this.questionService.getQuestions(examId).subscribe(questions => {
       console.log(questions);
       this.questionService.questions = questions;

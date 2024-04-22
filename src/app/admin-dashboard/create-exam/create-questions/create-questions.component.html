@@ -4,10 +4,6 @@
     <div class="col-md-8">
       <h3>Total Questions: <span>{{ questionService.getTotalQuestions() }}</span></h3>
     </div>
-    <div class="col-md-4 mt-5">
-      <button id="saveQuestions" class="btn btn-success">Save</button>
-      <button id="saveQuestions" class="btn btn-danger m-2">Go Back</button>
-    </div>
     <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="question">Question</label>

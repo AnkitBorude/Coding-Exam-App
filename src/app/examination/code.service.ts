@@ -8,14 +8,14 @@ import { HttpClient } from '@angular/common/http';
 export class CodeService {
     public runcode=new Subject();
     public textSource = new BehaviorSubject<any>('');
-
+    public currentQuestionIndex: number = 0; //holding the current index of the selected question.
     constructor(private http: HttpClient) {}
   
     changeText(text: string) {
       this.textSource.next(text);
     }
 
-    private apiUrl = 'http://localhost:3000/api/exams/'; // Replace with your actual API URL
+    private apiUrl = 'http://localhost:3000/api/exams/';
 
   getExamDetails(examId: number): Observable<Exam> {
     return this.http.get<Exam>(`${this.apiUrl}/${examId}`);

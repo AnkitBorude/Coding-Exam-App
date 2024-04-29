@@ -13,7 +13,7 @@ export class ExaminationComponent {
   currentQuestionIndex: number = 0;
 
   constructor(
-    private examService: CodeService,
+    public examService: CodeService,
     private route: ActivatedRoute
   ) { }
 
@@ -43,5 +43,10 @@ export class ExaminationComponent {
   populateNavLinks(questions: any[]) {
     // Implement the logic to populate the navigation links with the questions
     console.log('Populating nav links with questions:', questions);
+  }
+  changeQuestionIndex(i:number)
+  {
+    this.currentQuestionIndex=i;
+    this.examService.currentQuestionIndex=i;
   }
 }

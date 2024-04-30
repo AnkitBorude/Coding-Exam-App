@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To do:-
+
+Now with each question the examination module will recieve the test case input and output data as well.
+where when the user run the code the test_case_input would be appended to the stdin of the code and will check whether if the execution was successfull then the test_case_output should match the stdout. then the successfull message would be shown. 
+
+we would maintain an internal data structure that would hold the each question's output and its correctness as required.then at the time of exam submission we would create a new result at backend and would push the datastructure as required.
+where major drawback is that if the user closes the window then he/she would not be able to maintain the coding data as required. thank you.
+
+Now some major tasks to be undertaken are as follows..
+
+1)access each questions test_case_input and append it as stdin for code
+2)check whether the question's test_case_output matches the stdout then show a message

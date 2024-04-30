@@ -22,7 +22,8 @@ export interface Exam {
   
   export interface TestCase {
     test_case_id?: number;
-    test_case: string;
+    test_case_input: string;
+    test_case_output:string;
   }
   
   export interface Answer {

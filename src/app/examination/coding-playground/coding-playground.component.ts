@@ -28,6 +28,7 @@ MyExtension: Extension = [
   syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
   highlightActiveLine(),
   python(),
+  fontSize
   
 ];
 constructor(private codeService: CodeService){

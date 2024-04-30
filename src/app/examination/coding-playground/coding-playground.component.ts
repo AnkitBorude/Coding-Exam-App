@@ -28,7 +28,7 @@ MyExtension: Extension = [
   syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
   highlightActiveLine(),
   python(),
- 
+  
 ];
 constructor(private codeService: CodeService){
     codeService.runcode.subscribe(()=>{
@@ -49,7 +49,7 @@ ngOnInit(){
       try {
         Istate = EditorState.create({
           extensions: [this.MyExtension],
-          doc:"Type Your Code here",
+          doc:"if __name__ == '__main__':\n\t n = int(input())",
           
         });
       } catch (e) {
@@ -57,6 +57,7 @@ ngOnInit(){
       }
   
       this.myEditor = new EditorView({ state:Istate, parent: myEditorElement });
+      
     }
   }
 
@@ -74,6 +75,7 @@ ngOnInit(){
       const body = {
         source_code: sourceCode,
         language_id: languageId,
+        stdin:'Ankit'
       };
   
       const url = 'https://judge0-ce.p.rapidapi.com/submissions/?base64_encoded=false&wait=true';

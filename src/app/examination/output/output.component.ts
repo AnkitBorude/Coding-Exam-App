@@ -17,9 +17,11 @@ ngOnInit()
     console.log(this.Code);
     if(data.stderr==null)
       {
+        this.Output=" ";
         this.Output=data.stdout;
       }
       else{
+        this.Output=" ";
         this.Output=data.stderr;
       }
   })

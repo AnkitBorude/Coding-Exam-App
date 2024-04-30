@@ -2,4 +2,8 @@
     <textarea style="height: 100%; width: 100%;" [ngClass]="{'text-danger':Code.stderr!=null}" (paste)="preventPaste($event)">
        {{Output}}
     </textarea>
+    <div class="alert">
+        <span class="close-btn">&times;</span>
+        <p>This is a message alert!</p>
+      </div>
 </div>

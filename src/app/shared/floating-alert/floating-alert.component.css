@@ -1,0 +1,22 @@
+.alert {
+    position: absolute;
+    top: 20px;
+    right: 150px;
+    padding: 25px 20px;
+    border-radius: 8px;
+    opacity: 0.9;
+    z-index: 2;
+    height: 80px;
+    width: 400px;
+    border: 2px solid;
+  }
+  
+  .close-btn {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  p{
+    font-weight: bold;
+  }

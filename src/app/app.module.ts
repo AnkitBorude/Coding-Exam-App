@@ -21,6 +21,7 @@ import { CreateQuestionsComponent } from './admin-dashboard/create-exam/create-q
 import { AttendExamComponent } from './student-dashboard/attend-exam/attend-exam.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRouteSnapshot } from '@angular/router';
+import { FloatingAlertComponent } from './shared/floating-alert/floating-alert.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { ActivatedRouteSnapshot } from '@angular/router';
     OutputComponent,
     CreateExamComponent,
     CreateQuestionsComponent,
-    AttendExamComponent
+    AttendExamComponent,
+    FloatingAlertComponent
   ],
   imports: [
     BrowserModule,

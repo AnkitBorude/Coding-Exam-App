@@ -6,20 +6,3 @@ textarea {
 .container-fluid{
   position: relative;
 }
-.alert {
-  position: absolute;
-  top: 20px;
-  right: 150px;
-  background-color: #ff9800;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 4px;
-  z-index: 2;
-}
-
-.close-btn {
-  float: right;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-}

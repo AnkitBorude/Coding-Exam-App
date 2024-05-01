@@ -1,0 +1,4 @@
+<div class="alert" [ngClass]="{'alert-success': alertType === 'success', 'alert-danger': alertType === 'danger'}" [hidden]="isHidden" [ngStyle]="{'top.px': top, 'right.px': right}">
+    <span class="close-btn" (click)="close()">&times;</span>
+    <p> {{message}} </p>
+</div>

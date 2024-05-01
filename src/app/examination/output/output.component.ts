@@ -18,6 +18,13 @@ ngOnInit()
     if(data.stderr==null)
       {
         this.Output=" ";
+        if(this.checkAnswer(data.stdout))
+          {
+            this.correctAnswer()
+          }
+        else{
+            this.wrongAnswer();
+        }
         this.Output=data.stdout;
       }
       else{
@@ -25,6 +32,28 @@ ngOnInit()
         this.Output=data.stderr;
       }
   })
+}
+checkAnswer(output:string):boolean
+{
+  let currentIndex:number=this.codeService.currentQuestionIndex;
+  let test_case_ouput:string=this.codeService.exam.coding_questions[currentIndex].test_cases[0].test_case_output;
+  if(output===test_case_ouput)
+    {
+      console.log("Test Case Passed");
+      return true;
+    }
+    else{
+      console.log("Test case failed ");
+      return false;
+    }
+}
+correctAnswer()
+{
+
+}
+wrongAnswer()
+{
+
 }
 preventPaste(event: ClipboardEvent) {
   event.preventDefault();

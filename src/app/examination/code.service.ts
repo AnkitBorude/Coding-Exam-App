@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class CodeService {
     public runcode=new Subject();
     public textSource = new BehaviorSubject<any>('');
+    exam: Exam | null = null;
     public currentQuestionIndex: number = 0; //holding the current index of the selected question.
     constructor(private http: HttpClient) {}
   

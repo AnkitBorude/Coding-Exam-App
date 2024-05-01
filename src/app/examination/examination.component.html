@@ -24,6 +24,10 @@
           <p>{{ exam.coding_questions[currentQuestionIndex].coding_question }}</p>
           <h5 class="mt-5">Expected Output</h5>
           <p>{{ exam.coding_questions[currentQuestionIndex].q_expected_output }}</p>
+          <h6>Input:- </h6>
+          <p>{{ exam.coding_questions[currentQuestionIndex].test_cases[0].test_case_input }}</p>
+          <h6>Output:- </h6>
+          <p>{{ exam.coding_questions[currentQuestionIndex].test_cases[0].test_case_output }}</p>
         </ng-container>
       </div>
       <div class="col-9 p-0">

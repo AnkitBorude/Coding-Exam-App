@@ -26,6 +26,7 @@ export class ExaminationComponent {
     this.examService.getExamDetails(examId).subscribe(
       (exam) => {
         this.exam = exam;
+        this.examService.exam=exam;
         this.initializeTimer(exam.exam_total_time);
         this.populateNavLinks(exam.coding_questions);
       },

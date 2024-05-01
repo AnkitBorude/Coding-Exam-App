@@ -62,6 +62,8 @@ ngOnInit(){
   }
 
   submitCode() {
+    let currentIndex:number=this.codeService.currentQuestionIndex;
+    let test_case_input:string=this.codeService.exam.coding_questions[currentIndex].test_cases[0].test_case_input.trim();
     if (this.editor) {
       const sourceCode = this.myEditor.state.doc.toString();
       const languageId = 92; // Python language ID
@@ -75,7 +77,7 @@ ngOnInit(){
       const body = {
         source_code: sourceCode,
         language_id: languageId,
-        stdin:'Ankit'
+        stdin:test_case_input
       };
   
       const url = 'https://judge0-ce.p.rapidapi.com/submissions/?base64_encoded=false&wait=true';

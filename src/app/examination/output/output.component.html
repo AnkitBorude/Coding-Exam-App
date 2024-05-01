@@ -1,4 +1,10 @@
 <div  style="height: 100%;" class="container-fluid p-0">
+    @if(isCorrect)
+    {
+        <app-floating-alert [type]="'success'" [message]="'Test Case Passed Correct Answer'" [top]="10" [right]="50"></app-floating-alert>
+    }@else if (isWrong) {
+        <app-floating-alert [type]="'danger'" [message]="'Test Case Failed Wrong Answer'" [top]="10" [right]="50"></app-floating-alert>
+    }
     <textarea style="height: 100%; width: 100%;" [ngClass]="{'text-danger':Code.stderr!=null}" (paste)="preventPaste($event)">
        {{Output}}
     </textarea>

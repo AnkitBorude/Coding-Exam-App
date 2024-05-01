@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CodeService } from '../code.service';
-
+import { FloatingAlertComponent } from '../../shared/floating-alert/floating-alert.component';
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
@@ -9,6 +9,8 @@ import { CodeService } from '../code.service';
 export class OutputComponent implements OnInit {
 Code:any=''
 Output:string;
+isCorrect:boolean=false;
+isWrong:boolean=false;
 constructor(private codeService: CodeService){}
 ngOnInit()
 {
@@ -18,7 +20,7 @@ ngOnInit()
     if(data.stderr==null)
       {
         this.Output=" ";
-        if(this.checkAnswer(data.stdout))
+        if(this.checkAnswer((data.stdout+" ").trim()))
           {
             this.correctAnswer()
           }
@@ -36,8 +38,8 @@ ngOnInit()
 checkAnswer(output:string):boolean
 {
   let currentIndex:number=this.codeService.currentQuestionIndex;
-  let test_case_ouput:string=this.codeService.exam.coding_questions[currentIndex].test_cases[0].test_case_output;
-  if(output===test_case_ouput)
+  let test_case_output:string=this.codeService.exam.coding_questions[currentIndex].test_cases[0].test_case_output.trim();
+  if(output===test_case_output)
     {
       console.log("Test Case Passed");
       return true;
@@ -49,11 +51,19 @@ checkAnswer(output:string):boolean
 }
 correctAnswer()
 {
-
+    console.log("Answer is Correct");
+    this.isCorrect=true;
+    setTimeout(()=>{
+      this.isCorrect=false;
+    },3000);
 }
 wrongAnswer()
 {
-
+    console.log("Wrong Answer");
+    this.isWrong=true;
+    setTimeout(()=>{
+      this.isWrong=false;
+    },3000);
 }
 preventPaste(event: ClipboardEvent) {
   event.preventDefault();

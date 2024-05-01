@@ -35,5 +35,6 @@ where major drawback is that if the user closes the window then he/she would not
 
 Now some major tasks to be undertaken are as follows..
 
-1)access each questions test_case_input and append it as stdin for code
-2)check whether the question's test_case_output matches the stdout then show a message
+1)access each questions test_case_input and append it as stdin for code-->Done
+2)check whether the question's test_case_output matches the stdout then show a message-->Done
+3)When the exam starts then we should initialize the result object with exam_id and student_id. after with each submit code, we should append the answer within the answer array and at the time of exam submission the whole result object would be sent to backend for storage.

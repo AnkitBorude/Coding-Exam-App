@@ -13,4 +13,8 @@ export class SubmitCodeComponent {
   {
     this.codeService.runcode.next('');
   }
+  submitCode()
+  {
+    this.codeService.submitcode.next('');
+  }
 }

@@ -20,6 +20,7 @@ export interface Result {
   export class ResultService{
     public studentResult:Result;
     public attendedQuestions:number[]=[];
+    public currentCode:string;
     public initResult(sid:number,eid:number)
     {
         this.studentResult={

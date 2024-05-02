@@ -33,6 +33,10 @@ ngOnInit()
         this.Output=" ";
         this.Output=data.stderr;
       }
+  });
+
+  this.codeService.submitcode.subscribe(()=>{
+    let currentIndex:number=this.codeService.currentQuestionIndex;
   })
 }
 checkAnswer(output:string):boolean
@@ -65,6 +69,7 @@ wrongAnswer()
       this.isWrong=false;
     },3000);
 }
+
 preventPaste(event: ClipboardEvent) {
   event.preventDefault();
 }

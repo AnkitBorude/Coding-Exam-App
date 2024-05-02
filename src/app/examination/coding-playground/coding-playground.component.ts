@@ -33,7 +33,7 @@ MyExtension: Extension = [
 constructor(private codeService: CodeService){
     codeService.runcode.subscribe(()=>{
       //codeService.textSource.next(this.myEditor.state.doc.toString());//accessign the code
-      this.submitCode();
+      this.runCode();
     })
     this.http=inject(HttpClient);
 }
@@ -61,7 +61,7 @@ ngOnInit(){
     }
   }
 
-  submitCode() {
+  runCode() {
     let currentIndex:number=this.codeService.currentQuestionIndex;
     let test_case_input:string=this.codeService.exam.coding_questions[currentIndex].test_cases[0].test_case_input.trim();
     if (this.editor) {

@@ -22,9 +22,11 @@ export interface Result {
     public attendedQuestions:number[]=[];
     public initResult(sid:number,eid:number)
     {
-        this.studentResult.result_id=Math.floor(10000 + Math.random() * 90000);
-        this.studentResult.fk_exam_id=eid;
-        this.studentResult.fk_student_id=sid;
+        this.studentResult={
+        result_id:Math.floor(10000 + Math.random() * 90000),
+        fk_exam_id: eid,
+        fk_student_id:sid
+        };
         console.log("result initialized successfully");
     }
     public appendAnswer(qid:number,code_answer:string,correct:boolean)

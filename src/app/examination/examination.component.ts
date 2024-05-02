@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Exam } from './exam.model';
 import { CodeService } from './code.service';
 import { ActivatedRoute } from '@angular/router';
+import { StudentService } from '../student.service';
+import { ResultService } from './result.service';
 
 @Component({
   selector: 'app-examination',
@@ -14,7 +16,9 @@ export class ExaminationComponent {
 
   constructor(
     public examService: CodeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public student:StudentService,
+    private result:ResultService
   ) { }
 
   ngOnInit() {
@@ -34,6 +38,7 @@ export class ExaminationComponent {
         console.error('Error fetching exam details:', error);
       }
     );
+    this.result.initResult(this.student.getStudentId(),examId);
   }
 
   initializeTimer(examTotalTime: string) {

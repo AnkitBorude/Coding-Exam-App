@@ -1,2 +1,5 @@
 <!-- <textarea name="write your code" style="height: 100%; width: 100%;" #editor></textarea> -->
 <div #editor id="editorc"></div>
+@if(isAnswerSubmitted) {
+    <app-floating-alert [type]="'success'" [message]="'Answer Submitted SuccessFully'" [top]="40" [right]="0"></app-floating-alert>
+}

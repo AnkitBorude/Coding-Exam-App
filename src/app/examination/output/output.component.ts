@@ -12,6 +12,9 @@ Code:any=''
 Output:string;
 isCorrect:boolean=false;
 isWrong:boolean=false;
+isError:boolean=false;
+isExecutedSuccessFully:boolean=false;
+isAnswerSubmitted:boolean=false;
 constructor(private codeService: CodeService,private resultService:ResultService){}
 ngOnInit()
 {
@@ -20,7 +23,12 @@ ngOnInit()
     console.log(this.Code);
     let correct:boolean=false;
     if(data.stderr==null)
+      
       {
+        this.isExecutedSuccessFully=true;
+      setTimeout(()=>{
+        this.isExecutedSuccessFully=false;
+      },2500);
         this.Output=" ";
         if(this.checkAnswer((data.stdout+" ").trim()))
           {
@@ -36,6 +44,10 @@ ngOnInit()
       else{
         this.Output=" ";
         this.Output=data.stderr;
+        this.isError=true;
+        setTimeout(()=>{
+          this.isError=false;
+        },2500);
       }
     this.resultService.codeRunnig.next(correct);
   });

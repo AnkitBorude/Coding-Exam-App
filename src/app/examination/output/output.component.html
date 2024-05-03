@@ -1,9 +1,16 @@
 <div  style="height: 100%;" class="container-fluid p-0">
-    @if(isCorrect)
+    @if(isExecutedSuccessFully)
     {
-        <app-floating-alert [type]="'success'" [message]="'Test Case Passed Correct Answer'" [top]="10" [right]="50"></app-floating-alert>
-    }@else if (isWrong) {
-        <app-floating-alert [type]="'danger'" [message]="'Test Case Failed Wrong Answer'" [top]="10" [right]="50"></app-floating-alert>
+        <app-floating-alert [type]="'success'" [message]="'Code Executed SuccessFully'" [top]="0" [right]="50"></app-floating-alert>
+        @if(isCorrect)
+        {
+            <app-floating-alert [type]="'success'" [message]="'Test Case Passed Correct Answer'" [top]="60" [right]="50"></app-floating-alert>
+        }@else if (isWrong) {
+            <app-floating-alert [type]="'danger'" [message]="'Test Case Failed Wrong Answer'" [top]="60" [right]="50"></app-floating-alert>
+        }
+    }
+   @else if(isError) {
+        <app-floating-alert [type]="'danger'" [message]="'One or More Error In Code'" [top]="10" [right]="0"></app-floating-alert>
     }
     <textarea style="height: 100%; width: 100%;" [ngClass]="{'text-danger':Code.stderr!=null}" (paste)="preventPaste($event)">
        {{Output}}

@@ -31,6 +31,7 @@ MyExtension: Extension = [
   python(),
   
 ];
+isAnswerSubmitted:boolean=false;
 constructor(private codeService: CodeService,private resultService:ResultService){
     codeService.runcode.subscribe(()=>{
       //codeService.textSource.next(this.myEditor.state.doc.toString());//accessign the code
@@ -39,7 +40,12 @@ constructor(private codeService: CodeService,private resultService:ResultService
     this.http=inject(HttpClient);
 }
 ngOnInit(){
-
+    this.resultService.codeRunnig.subscribe((value=>{
+      this.isAnswerSubmitted=true;
+      setTimeout(()=>{
+        this.isAnswerSubmitted=false;
+      },3500);
+    }))
 }
   ngAfterViewInit(): void {
     {

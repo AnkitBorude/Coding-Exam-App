@@ -30,11 +30,11 @@ export interface Result {
         };
         console.log("result initialized successfully");
     }
-    public appendAnswer(qid:number,code_answer:string,correct:boolean)
+    public appendAnswer(qid:number,correct:boolean)
     {
         const answer:Answer={
             fk_question_id:qid,
-            answer:code_answer,
+            answer:this.currentCode,//accessing submitted code here
             isCorrect:correct
         }
         const existingAnswerIndex = this.studentResult.answers.findIndex(

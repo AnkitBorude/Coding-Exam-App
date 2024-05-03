@@ -10,6 +10,7 @@ import {
 import { basicSetup } from 'codemirror';
 import { CodeService } from '../code.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ResultService } from '../result.service';
 
 @Component({
   selector: 'app-coding-playground',
@@ -30,7 +31,7 @@ MyExtension: Extension = [
   python(),
   
 ];
-constructor(private codeService: CodeService){
+constructor(private codeService: CodeService,private resultService:ResultService){
     codeService.runcode.subscribe(()=>{
       //codeService.textSource.next(this.myEditor.state.doc.toString());//accessign the code
       this.runCode();
@@ -66,6 +67,7 @@ ngOnInit(){
     let test_case_input:string=this.codeService.exam.coding_questions[currentIndex].test_cases[0].test_case_input.trim();
     if (this.editor) {
       const sourceCode = this.myEditor.state.doc.toString();
+      this.resultService.currentCode=sourceCode;
       const languageId = 92; // Python language ID
   
       const headers = new HttpHeaders({

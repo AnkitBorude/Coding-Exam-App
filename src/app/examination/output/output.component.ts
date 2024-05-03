@@ -18,14 +18,17 @@ ngOnInit()
   this.codeService.textSource.subscribe((data)=>{
     this.Code=data;
     console.log(this.Code);
+    let correct:boolean=false;
     if(data.stderr==null)
       {
         this.Output=" ";
         if(this.checkAnswer((data.stdout+" ").trim()))
           {
+            correct=true;
             this.correctAnswer()
           }
         else{
+          correct=false;
             this.wrongAnswer();
         }
         this.Output=data.stdout;
@@ -34,14 +37,18 @@ ngOnInit()
         this.Output=" ";
         this.Output=data.stderr;
       }
+    this.resultService.codeRunnig.next(correct);
   });
 
   this.codeService.submitcode.subscribe(()=>{
     let currentIndex:number=this.codeService.currentQuestionIndex;
     const qid:number=this.codeService.exam.coding_questions[currentIndex].question_id;
     this.codeService.runcode.next('');//running the code where the code would be saved too
-    const correct:boolean=this.isCorrect;//accessing the property of the code correctness
-    this.resultService.appendAnswer(qid,correct);//appending the question back.
+    this.resultService.codeRunnig.subscribe((value)=>{
+      this.resultService.appendAnswer(qid,value);//appending the question back.
+    console.log("Answer Submitted SuccessFully");
+    console.log(this.resultService.studentResult);
+    })
   })
 }
 checkAnswer(output:string):boolean

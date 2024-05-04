@@ -37,4 +37,10 @@ Now some major tasks to be undertaken are as follows..
 
 1)access each questions test_case_input and append it as stdin for code-->Done
 2)check whether the question's test_case_output matches the stdout then show a message-->Done
-3)When the exam starts then we should initialize the result object with exam_id and student_id. after with each submit code, we should append the answer within the answer array and at the time of exam submission the whole result object would be sent to backend for storage.
+3)When the exam starts then we should initialize the result object with exam_id and student_id. after with each submit code, we should append the answer within the answer array and at the time of exam submission the whole result object would be sent to backend for storage.--->Done
+4)Implementing the exam time functionality and submission
+    where showing the are you sure you want to submit the exam alertbox
+    showing final screen after exam has been submitted and storing the result object in the database.
+    refactoring the student cannot attempt the exam attempted before.
+    showing admin the exam list and corresponding list of students 
+    where each student will show the marks and exam details like code 

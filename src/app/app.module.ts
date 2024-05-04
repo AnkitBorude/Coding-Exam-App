@@ -22,6 +22,7 @@ import { AttendExamComponent } from './student-dashboard/attend-exam/attend-exam
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { FloatingAlertComponent } from './shared/floating-alert/floating-alert.component';
+import { SubmitExamComponent } from './examination/submit-code/submit-exam/submit-exam.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { FloatingAlertComponent } from './shared/floating-alert/floating-alert.c
     CreateExamComponent,
     CreateQuestionsComponent,
     AttendExamComponent,
-    FloatingAlertComponent
+    FloatingAlertComponent,
+    SubmitExamComponent
   ],
   imports: [
     BrowserModule,

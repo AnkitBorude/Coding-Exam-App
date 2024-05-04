@@ -6,7 +6,8 @@
   }
   /* Styling the card */
   .card {
-    width: 400px;
+    width: calc(400px * 1.618);
+    height: 400px;
     background-color: #f0f0f0; /* Light gray background */
     border: 2px solid #6c757d; /* Dark gray border */
   }

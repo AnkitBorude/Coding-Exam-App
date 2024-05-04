@@ -3,13 +3,16 @@
     <div class="card-header">Enter Exam Code to Attend </div>
     <div class="card-body">
       <form>
-        <div class="form-group">
+        <label for="examid">Select the Exam / Enter Exam Code</label>
+          <select class="form-select" name="examid" [(ngModel)]="examCode">
+            <option selected value="">Select Exam </option>
+            <option *ngFor="let exam of exams" [value]="exam.exam_id">ID: {{exam.exam_id}} Name:- {{exam.exam_name}} </option>
+          </select>
+          <h4 class="mt-5">OR</h4>
           <input type="text" class="form-control form-control-md mt-5" placeholder="Enter Exam Code" [(ngModel)]="examCode" name="examid">
-        </div>
         <button type="button" class="btn btn-primary btn-lg mt-5" (click)="checkAttendance()">Attend</button>
-        <div class="alert alert-primary fade show mt-5" role="alert" [ariaDisabled]="message==null">{{ message }}</div>
+        <div class="alert alert-primary fade show mt-5" role="alert" [hidden]="message==''">{{ message }}</div>
       </form>
     </div>
   </div>
 </div>
- 

@@ -24,7 +24,10 @@ export class AttendExamComponent implements OnInit {
       .subscribe(
         (response: any) => {
           this.message = response.message;
-          this.router.navigate(['/examination',examId,this.studentId]);
+          if(response.result=="failed")
+            {
+              this.router.navigate(['/examination',examId,this.studentId]);
+            }
         },
         (error) => {
           console.error('Error checking attendance:', error);

@@ -13,12 +13,13 @@ import { ResultService } from './result.service';
 export class ExaminationComponent {
   exam: Exam | null = null;
   currentQuestionIndex: number = 0;
-
+  Minutes:number=0;
+  Seconds:number=0;
   constructor(
     public examService: CodeService,
     private route: ActivatedRoute,
     public student:StudentService,
-    private result:ResultService
+    public result:ResultService
   ) { }
 
   ngOnInit() {

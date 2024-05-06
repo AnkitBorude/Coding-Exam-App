@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-submit-exam',
@@ -53,17 +53,20 @@ import { Component } from '@angular/core';
 })
 export class SubmitExamComponent{
   showModal = false;
+  @Output() eventFromChild = new EventEmitter<any>();
   headMessage:string="Do You really want to submit the exam ?";
   footMessage:string="*You cannot attend exam again once you submitted";
   onSubmit() {
     // Handle submit logic here
     console.log('Exam submitted');
+    this.eventFromChild.emit("submitted");
     this.showModal = true;
   }
 
   onCancel() {
     // Handle cancel logic here
     console.log('Exam submission canceled');
+    this.eventFromChild.emit("canceled");
     this.showModal = true;
   }
 }

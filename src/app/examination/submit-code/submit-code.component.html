@@ -1,13 +1,14 @@
 <div class="container-fluid">
     <div class="row button-container">
       <div class="col-2">
-        <button type="button" class="btn btn-success" (click)="runCode()">Run</button>
+        <button type="button" class="btn btn-success fw-bold" (click)="runCode()">Run</button>
       </div>
       <div class="col-8">
         <button type="button" class="btn btn-primary" (click)="submitCode()">Submit Answer</button>
       </div>
       <div class="col-2">
-        <button type="button" class="btn btn-danger">Submit Exam</button>
+        <button type="button" class="btn btn-danger" (click)="submitExam()">Submit Exam</button>
       </div>
+      <app-submit-exam *ngIf="submitExamToggle" (eventFromChild)="toggled($event)"></app-submit-exam>
     </div>
 </div>

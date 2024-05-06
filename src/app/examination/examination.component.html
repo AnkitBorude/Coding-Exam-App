@@ -8,8 +8,13 @@
             </li>
             <ng-container *ngIf="exam">
               <li class="nav-item" *ngFor="let question of exam.coding_questions; let i = index">
-                <a class="nav-link text-white" style="cursor: pointer;" (click)="changeQuestionIndex(i)">Q.{{ i + 1 }}</a>
-              </li>
+               @if(isSolved(i))
+               {
+                <a class="nav-link text-success" style="cursor: pointer; font-weight: bold;" [ngClass]="{'glow-text-green':this.currentQuestionIndex===i}" (click)="changeQuestionIndex(i)">Q.{{ i + 1 }}</a>
+               }
+               @else {
+                <a class="nav-link text-white" style="cursor: pointer; font-weight: bold;" [ngClass]="{'glow-text-white':this.currentQuestionIndex===i}" (click)="changeQuestionIndex(i)">Q.{{ i + 1 }}</a>
+               }</li>
             </ng-container>
           </ul>
             <div class="card border-0 ms-auto me-2" style="background-color: #e27605;font-weight: bold;">
@@ -31,6 +36,8 @@
           <p>{{ exam.coding_questions[currentQuestionIndex].test_cases[0].test_case_input }}</p>
           <h6>Output:- </h6>
           <p>{{ exam.coding_questions[currentQuestionIndex].test_cases[0].test_case_output }}</p>
+
+          <p class="mt-5 text-warning">Please Do not refresh all the data would be losted</p>
         </ng-container>
       </div>
       <div class="col-9 p-0">

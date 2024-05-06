@@ -1,6 +1,8 @@
-import { Injectable } from "@angular/core";
+import { Injectable, inject } from "@angular/core";
 import { Subject } from "rxjs";
 import { TimeInterval } from "rxjs/internal/operators/timeInterval";
+import { ExamService } from "../admin-dashboard/create-exam/create-exam.service";
+import { CodeService } from "./code.service";
 
 export interface Result {
     result_id: number;
@@ -22,12 +24,22 @@ export interface Result {
   })
   export class ResultService{
     public studentResult:Result;
+
     public attendedQuestions:number[]=[];
+    public attendedQuestionIndex:number[]=[];
+
     public currentCode:string;
+
     public codeRunnig=new Subject<boolean>();
+
     public Minutes:number=0;
     public Seconds:number=0;
     private timeInterval:any;
+
+    examService:CodeService;
+    constructor(){
+      this.examService=inject(CodeService);
+    }
     public initResult(sid:number,eid:number)
     {
         this.studentResult={
@@ -58,6 +70,7 @@ export interface Result {
             console.log("appended new answer");
           }
           this.attendedQuestions.push(qid);
+          this.attendedQuestionIndex.push(this.examService.currentQuestionIndex);
     }
     private initTimer(tMinutes:number)
     {

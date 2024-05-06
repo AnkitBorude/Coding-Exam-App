@@ -13,8 +13,6 @@ import { ResultService } from './result.service';
 export class ExaminationComponent {
   exam: Exam | null = null;
   currentQuestionIndex: number = 0;
-  Minutes:number=0;
-  Seconds:number=0;
   constructor(
     public examService: CodeService,
     private route: ActivatedRoute,
@@ -32,8 +30,6 @@ export class ExaminationComponent {
       (exam) => {
         this.exam = exam;
         this.examService.exam=exam;
-        this.initializeTimer(exam.exam_total_time);
-        this.populateNavLinks(exam.coding_questions);
       },
       (error) => {
         console.error('Error fetching exam details:', error);
@@ -41,19 +37,16 @@ export class ExaminationComponent {
     );
     this.result.initResult(this.student.getStudentId(),examId);
   }
-
-  initializeTimer(examTotalTime: string) {
-    // Implement the logic to initialize the timer with the examTotalTime
-    console.log('Initializing timer:', examTotalTime);
-  }
-
-  populateNavLinks(questions: any[]) {
-    // Implement the logic to populate the navigation links with the questions
-    console.log('Populating nav links with questions:', questions);
-  }
   changeQuestionIndex(i:number)
   {
     this.currentQuestionIndex=i;
     this.examService.currentQuestionIndex=i;
+  }
+  isSolved(index):boolean{
+    if(this.result.attendedQuestionIndex.findIndex((a)=>a===index)===-1)
+      {
+        return false;
+      }
+      return true;
   }
 }

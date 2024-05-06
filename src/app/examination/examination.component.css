@@ -6,3 +6,9 @@
 .navbar-nav.scrollable::-webkit-scrollbar {
     display: none;
 }
+.glow-text-white {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+  }
+.glow-text-green {
+    text-shadow: 0 0 5px #0dc44a, 0 0 10px #018d01, 0 0 15px #54c00b;
+  }

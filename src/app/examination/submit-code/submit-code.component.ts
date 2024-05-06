@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CodeService } from '../code.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { CodeService } from '../code.service';
   styleUrl: './submit-code.component.css'
 })
 export class SubmitCodeComponent {
-
+  submitExamToggle:boolean=false;
   constructor(private codeService: CodeService) {}
   runCode()
   {
@@ -16,5 +16,18 @@ export class SubmitCodeComponent {
   submitCode()
   {
     this.codeService.submitcode.next('');
+  }
+  submitExam()
+  {
+    this.submitExamToggle=true;
+  }
+  toggled(data:string)
+  {
+    if(data==="canceled"){
+      this.submitExamToggle=false;
+    }
+    else{
+      //handle the exam submission here
+    }
   }
 }

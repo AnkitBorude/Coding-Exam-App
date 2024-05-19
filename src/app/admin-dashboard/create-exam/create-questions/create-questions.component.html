@@ -17,6 +17,15 @@
         <label for="marks">Marks</label>
         <input type="number" class="form-control" id="marks" formControlName="marks" required>
       </div>
+      <h5 class="mt-5 mb-2">Test Cases</h5>
+      <div class="form-group">
+        <label for="testcasei">Test Case Input</label>
+        <input type="text" class="form-control" formControlName="testcasei" required>
+      </div>
+      <div class="form-group mt-2">
+        <label for="testcaseo">Test Case Output</label>
+        <input type="text" class="form-control"  formControlName="testcaseo" required>
+      </div>
       <button type="submit" class="btn btn-primary mt-3" [disabled]="!questionForm.valid">Add Question</button>
     </form>
   </div>
@@ -29,9 +38,12 @@
             <h5 class="card-title">Question</h5>
             <p class="card-text"> Question Id :- {{question.question_id}}</p>
             <p class="card-text">{{ question.coding_question }}</p>
-            <h6 class="card-subtitle mb-2 text-muted">Expected Output:</h6>
+            <h6 class="card-text">Expected Output:</h6>
             <p class="card-text">{{ question.q_expected_output }}</p>
             <p class="card-text">Marks: {{ question.marks }}</p>
+            <h6 class="card-subtitle mt-2 mb-2">Test Cases</h6>
+            <p class="card-text">Test Case Input:- {{question.test_cases[0].test_case_input}}</p>
+            <p class="card-text">Test Case Input:- {{question.test_cases[0].test_case_output}}</p>
           </div>
           <div class="card-footer">
             <button class="btn btn-danger btn-sm float-start" (click)="deleteQuestion(i)">Delete Question</button>

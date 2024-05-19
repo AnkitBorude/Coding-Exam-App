@@ -49,7 +49,7 @@ ngOnInit()
           this.isError=false;
         },2500);
       }
-    this.resultService.codeRunnig.next(correct);
+    this.resultService.codeRunnig.next({isCorrect:correct,isCodeSubmitted:this.codeService.isCodeSubmitted});
   });
 
   this.codeService.submitcode.subscribe(()=>{
@@ -57,7 +57,7 @@ ngOnInit()
     const qid:number=this.codeService.exam.coding_questions[currentIndex].question_id;
     this.codeService.runcode.next('');//running the code where the code would be saved too
     this.resultService.codeRunnig.subscribe((value)=>{
-      this.resultService.appendAnswer(qid,value);//appending the question back.
+      this.resultService.appendAnswer(qid,value.isCorrect);//appending the question back.
     console.log("Answer Submitted SuccessFully");
     console.log(this.resultService.studentResult);
     })

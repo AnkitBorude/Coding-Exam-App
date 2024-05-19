@@ -7,8 +7,9 @@ import { HttpClient } from '@angular/common/http';
   })
 export class CodeService {
     public runcode=new Subject();
-    public submitcode=new Subject();
-    public textSource = new Subject<any>();
+    public submitcode=new Subject();//codesubmitted
+    public textSource = new Subject<any>();//output
+    public isCodeSubmitted:boolean=false;
     exam: Exam | null = null;
     public currentQuestionIndex: number = 0; //holding the current index of the selected question.
     constructor(private http: HttpClient) {}

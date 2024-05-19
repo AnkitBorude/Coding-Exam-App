@@ -15,7 +15,9 @@ export class CreateQuestionsComponent {
     this.questionForm = this.fb.group({
       question: ['', Validators.required],
       expectedOutput: ['', Validators.required],
-      marks: ['', Validators.required]
+      marks: ['', Validators.required],
+      testcasei:['',Validators.required],
+      testcaseo:['',Validators.required]
     });
     
   }

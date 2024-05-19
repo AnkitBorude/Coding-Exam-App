@@ -12,10 +12,12 @@ export class SubmitCodeComponent {
   runCode()
   {
     this.codeService.runcode.next('');
+    this.codeService.isCodeSubmitted=false;
   }
   submitCode()
   {
     this.codeService.submitcode.next('');
+    this.codeService.isCodeSubmitted=true;
   }
   submitExam()
   {

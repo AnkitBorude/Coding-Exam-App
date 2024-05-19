@@ -30,7 +30,7 @@ export interface Result {
 
     public currentCode:string;
 
-    public codeRunnig=new Subject<boolean>();
+    public codeRunnig=new Subject<{isCorrect:boolean,isCodeSubmitted:boolean}>();//settinh true when the code is just meant to run 
 
     public Minutes:number=0;
     public Seconds:number=0;

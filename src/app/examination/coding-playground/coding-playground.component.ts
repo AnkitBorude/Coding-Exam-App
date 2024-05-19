@@ -41,10 +41,13 @@ constructor(private codeService: CodeService,private resultService:ResultService
 }
 ngOnInit(){
     this.resultService.codeRunnig.subscribe((value=>{
+      if(value.isCodeSubmitted)
+        {
       this.isAnswerSubmitted=true;
       setTimeout(()=>{
         this.isAnswerSubmitted=false;
       },3500);
+    }
     }))
 }
   ngAfterViewInit(): void {

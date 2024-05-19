@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CodeService } from '../code.service';
+import { ResultService } from '../result.service';
 
 @Component({
   selector: 'app-submit-code',
@@ -8,7 +9,7 @@ import { CodeService } from '../code.service';
 })
 export class SubmitCodeComponent {
   submitExamToggle:boolean=false;
-  constructor(private codeService: CodeService) {}
+  constructor(private codeService: CodeService,private resultService: ResultService) {}
   runCode()
   {
     this.codeService.runcode.next('');
@@ -29,7 +30,8 @@ export class SubmitCodeComponent {
       this.submitExamToggle=false;
     }
     else{
-      //handle the exam submission here
+      this.submitExamToggle=false;
+      console.log(this.resultService.studentResult);
     }
   }
 }

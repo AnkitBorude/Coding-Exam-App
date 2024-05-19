@@ -89,8 +89,6 @@ export interface Result {
         }else{
           this.Seconds--;
         }
-        console.log("Minutes:- ", this.Minutes);
-        console.log("Seconds:-",this.Seconds);
       }, 1000); // Interval of 1 second (1000 milliseconds)
     }
 }

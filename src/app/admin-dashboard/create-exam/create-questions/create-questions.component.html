@@ -67,6 +67,6 @@
         <!-- Repeat this structure for each added question -->
       </div>
     </div>
-    
+    <app-floating-alert [message]="'Question Added SuccessFully'" [top]="200" [right]="500" [type]="'success'" *ngIf="questionAdded"></app-floating-alert>
   </div>
   

@@ -33,18 +33,12 @@ export interface Question {
   question_id: number;
   q_expected_output: string;
   coding_question: string;
-  test_cases?: TestCase[];
-  answers?: Answer[];
+  test_cases: TestCase[];
   marks:number;
 }
 
-interface TestCase {
+export interface TestCase {
   test_case_id: number;
-  test_case: string;
-}
-
-interface Answer {
-  answer_id: number;
-  answer_code: string;
-  answer_isCorrect: boolean;
+  test_case_input?: string;
+  test_case_output?:string;
 }

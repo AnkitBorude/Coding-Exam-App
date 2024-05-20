@@ -39,22 +39,16 @@ export interface Exam {
   coding_questions?: CodingQuestion[];
 }
 
-interface CodingQuestion {
+export interface CodingQuestion {
   question_id: number;
-  q_expected_output?: string;
+  q_expected_output: string;
   coding_question: string;
   test_cases: TestCase[];
-  answers: Answer[];
+  marks:number;
 }
 
 export interface TestCase {
-  test_case_id?: number;
+  test_case_id: number;
   test_case_input?: string;
   test_case_output?:string;
-}
-
-interface Answer {
-  answer_id: number;
-  answer_code?: string;
-  answer_isCorrect?: boolean;
 }

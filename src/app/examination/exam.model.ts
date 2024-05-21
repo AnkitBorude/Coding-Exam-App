@@ -8,7 +8,6 @@ export interface Exam {
     exam_total_attended?: number;
     exam_due_date: Date;
     fk_admin_id: number;
-    fk_student_ids?: number[];
     coding_questions: CodingQuestion[];
   }
   
@@ -18,6 +17,7 @@ export interface Exam {
     coding_question: string;
     test_cases: TestCase[];
     answers: Answer[];
+    marks:number;
   }
   
   export interface TestCase {

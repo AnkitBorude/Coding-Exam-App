@@ -29,13 +29,13 @@ export class ExaminationComponent {
     this.examService.getExamDetails(examId).subscribe(
       (exam) => {
         this.exam = exam;
-        this.examService.exam=exam;
+        this.result.initResult(this.student.getStudentId(),examId);
       },
       (error) => {
         console.error('Error fetching exam details:', error);
       }
     );
-    this.result.initResult(this.student.getStudentId(),examId);
+   
   }
   changeQuestionIndex(i:number)
   {

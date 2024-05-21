@@ -36,6 +36,11 @@ export interface Result {
     public Seconds:number=0;
     private timeInterval:any;
 
+    public totalQuestions:number;
+    public totalQuestionsCorrect:number;
+    public totalMarks:number;
+    public totalQuestionsAttended:number;
+    public totalQuestionsWrong:number;
     examService:CodeService;
     constructor(){
       this.examService=inject(CodeService);
@@ -49,7 +54,10 @@ export interface Result {
         answers:[]
         };
         this.initTimer(60);
+        this.totalQuestions=this.examService.exam.exam_total_questions;
         console.log("result initialized successfully");
+        console.log("Exam Details are as follows");
+        console.log(this.examService.exam.coding_questions);
     }
     public appendAnswer(qid:number,correct:boolean)
     {
@@ -61,16 +69,47 @@ export interface Result {
         const existingAnswerIndex = this.studentResult.answers.findIndex(
             (a) => a.fk_question_id === qid
           );
-    
+        let currentIndex=this.examService.currentQuestionIndex;
           if (existingAnswerIndex !== -1) {
+            if(this.studentResult.answers[existingAnswerIndex].isCorrect)//existing answer is correct
+              {
+                if(!correct)//newly submitted Answer is wrong
+                {
+                  this.totalQuestionsCorrect--;
+                  this.totalQuestionsWrong++;
+                  this.totalMarks=this.totalMarks-this.examService.exam.coding_questions[currentIndex].marks;
+                }
+              }
+              else//existing answer was wrong
+              {
+                if(correct)//newly answer is correct
+                  {
+                      this.totalQuestionsCorrect++;
+                      this.totalQuestionsWrong--;
+                      this.totalMarks=this.totalMarks+this.examService.exam.coding_questions[currentIndex].marks;
+                  }
+              }
             this.studentResult.answers[existingAnswerIndex] = answer;
+           
             console.log("attended existing question");
           } else {
+            if(correct)
+              {
+                this.totalMarks=this.totalMarks+this.examService.exam.coding_questions[currentIndex].marks;
+                this.totalQuestionsCorrect++;
+              }
+              else
+              {
+                this.totalQuestionsWrong++;
+              }
             this.studentResult.answers.push(answer);
+            this.totalQuestionsAttended++;
             console.log("appended new answer");
           }
           this.attendedQuestions.push(qid);
-          this.attendedQuestionIndex.push(this.examService.currentQuestionIndex);
+          this.attendedQuestionIndex.push(currentIndex);
+         
+          
     }
     private initTimer(tMinutes:number)
     {
@@ -90,5 +129,9 @@ export interface Result {
           this.Seconds--;
         }
       }, 1000); // Interval of 1 second (1000 milliseconds)
+    }
+    public submitExam()
+    {
+
     }
 }

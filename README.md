@@ -54,8 +54,8 @@
 <summary>Click to expand installation steps</summary>
 <ol>
 <li>Clone the repository<br></li>
-<code>git clone https://github.com/yourusername/coding-platform-frontend.git</code><br>
-<code>cd coding-platform-frontend</code>
+<code>git clone https://github.com/AnkitBorude/Coding-Exam-App.git</code><br>
+<code>cd Coding-Exam-App</code>
 <li>Install dependencies<br></li>
 <code>npm install</code>
 <li>Start the development server<br></li>
@@ -122,11 +122,12 @@
 <div align="center">
 <h2>Fork the repository</h2>
 </div>
-<br>Create your feature branch <code>(git checkout -b feature/AmazingFeature)</code>
-<br>Commit your changes <code>(git commit -m 'Add some AmazingFeature')</code>
-<br>Push to the branch <code>(git push origin feature/AmazingFeature)</code>
-<br>Open a Pull Request
-
+<ul>
+<li><br>Create your feature branch <code>(git checkout -b feature/AmazingFeature)</code></li>
+<li><br>Commit your changes <code>(git commit -m 'Add some AmazingFeature')</code></li>
+<li><br>Push to the branch <code>(git push origin feature/AmazingFeature)</code></li>
+<li><br>Open a Pull Request</li>
+</ul>
 <div align="center">
   <h2>📝 License</h2>
   <p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>

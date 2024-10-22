@@ -52,14 +52,24 @@
 </div>
 <details>
 <summary>Click to expand installation steps</summary>
-Clone the repository
+  <ol>
+<li>l>Clone the repository<br>
+  <code>
 git clone https://github.com/yourusername/coding-platform-frontend.git
+  </code><br></li>
+    <li>
+  <code>
 cd coding-platform-frontend
-Install dependencies
-npm install
-Start the development server
-ng serve
-Access the application at http://localhost:4200
+  </code></li>
+    <li>
+Install dependencies<br><code>
+npm install</code></li>
+    <li>
+Start the development server<br>
+<code>ng serve</code>
+      <li>
+Access the application at http://localhost:4200</li>
+  </ol>
 
 </details>
 <div align="center">

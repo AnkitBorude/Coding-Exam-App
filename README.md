@@ -1,46 +1,156 @@
-# CodingExamApp
+<div align="center">
+  <h1>🚀 Coding Examination Platform Frontend</h1>
+  <p>
+    <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular"/>
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+    <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
+  </p>
+  <p>A modern, responsive single-page application built with Angular for conducting coding assessments. This application provides an intuitive interface for users to take coding tests and get real-time feedback on their submissions.</p>
+</div>
+<hr>
+<div align="center">
+  <h2>✨ Features</h2>
+</div>
+<table align="center">
+  <tr>
+    <td align="center">🖥️ <b>Interactive Code Editor</b></td>
+    <td align="center">⚡ <b>Real-time Compilation</b></td>
+    <td align="center">🌐 <b>Multiple Languages</b></td>
+  </tr>
+  <tr>
+    <td align="center">📱 <b>Responsive Design</b></td>
+    <td align="center">🧪 <b>Test Case Visualization</b></td>
+    <td align="center">📊 <b>User Dashboard</b></td>
+  </tr>
+</table>
+<div align="center">
+  <h2>🛠️ Tech Stack</h2>
+</div>
+<table align="center">
+  <tr>
+    <th>Category</th>
+    <th>Technologies</th>
+  </tr>
+  <tr>
+    <td>Core Framework</td>
+    <td><img src="https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white" alt="Angular"/></td>
+  </tr>
+  <tr>
+    <td>Language</td>
+    <td><img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white" alt="TypeScript"/></td>
+  </tr>
+  <tr>
+    <td>Styling</td>
+    <td>
+      <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=flat&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
+      <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS3"/>
+    </td>
+  </tr>
+</table>
+<div align="center">
+  <h2>🔧 Installation</h2>
+</div>
+<details>
+<summary>Click to expand installation steps</summary>
+Clone the repository
+git clone https://github.com/yourusername/coding-platform-frontend.git
+cd coding-platform-frontend
+Install dependencies
+npm install
+Start the development server
+ng serve
+Access the application at http://localhost:4200
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+</details>
+<div align="center">
+  <h2>📸 Screenshots</h2>
+</div>
+<details>
+<summary>View Application Screenshots</summary>
+<div align="center">
+  <h3>Dashboard</h3>
+  <img src="./screenshots/dashboard.png" alt="Dashboard" width="800"/>
+  <p><i>Main dashboard showing available coding challenges and user progress</i></p>
+  <h3>Code Editor Interface</h3>
+  <img src="./screenshots/code-editor.png" alt="Code Editor" width="800"/>
+  <p><i>Interactive code editor with syntax highlighting and test case panel</i></p>
+  <h3>Results View</h3>
+  <img src="./screenshots/results.png" alt="Results" width="800"/>
+  <p><i>Detailed view of test case results and performance metrics</i></p>
+  <h3>Mobile View</h3>
+  <img src="./screenshots/mobile-view.png" alt="Mobile Interface" width="400"/>
+  <p><i>Responsive design adaptation for mobile devices</i></p>
+</div>
+</details>
+<div align="center">
+  <h2>💻 Development Commands</h2>
+</div>
+<table align="center">
+  <tr>
+    <th>Command</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>ng serve</code></td>
+    <td>Start development server</td>
+  </tr>
+  <tr>
+    <td><code>ng build</code></td>
+    <td>Build the application</td>
+  </tr>
+  <tr>
+    <td><code>ng test</code></td>
+    <td>Run unit tests</td>
+  </tr>
+  <tr>
+    <td><code>ng lint</code></td>
+    <td>Run linting</td>
+  </tr>
+</table>
+<div align="center">
+  <h2>🔄 API Integration</h2>
+</div>
+<table align="center">
+  <tr>
+    <th>Endpoint</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>POST /compile</code></td>
+    <td>Sends code for compilation</td>
+  </tr>
+  <tr>
+    <td><code>GET /languages</code></td>
+    <td>Fetches supported languages</td>
+  </tr>
+</table>
+<div align="center">
+  <h2>🤝 Contributing</h2>
+</div>
 
-## Development server
+Fork the repository
+Create your feature branch (git checkout -b feature/AmazingFeature)
+Commit your changes (git commit -m 'Add some AmazingFeature')
+Push to the branch (git push origin feature/AmazingFeature)
+Open a Pull Request
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-To do:-
-
-Now with each question the examination module will recieve the test case input and output data as well.
-where when the user run the code the test_case_input would be appended to the stdin of the code and will check whether if the execution was successfull then the test_case_output should match the stdout. then the successfull message would be shown. 
-
-we would maintain an internal data structure that would hold the each question's output and its correctness as required.then at the time of exam submission we would create a new result at backend and would push the datastructure as required.
-where major drawback is that if the user closes the window then he/she would not be able to maintain the coding data as required. thank you.
-
-Now some major tasks to be undertaken are as follows..
-
-1)access each questions test_case_input and append it as stdin for code-->Done
-2)check whether the question's test_case_output matches the stdout then show a message-->Done
-3)When the exam starts then we should initialize the result object with exam_id and student_id. after with each submit code, we should append the answer within the answer array and at the time of exam submission the whole result object would be sent to backend for storage.--->Done
-4)Implementing the exam time functionality and submission
-    where showing the are you sure you want to submit the exam alertbox--->Done
-    showing final screen after exam has been submitted and storing the result object in the database.
-    refactoring the student cannot attempt the exam attempted before.--->Done
-    showing admin the exam list and corresponding list of students -->Need to add demo results in the table for that purpose such that screens could be developed
-    where each student will show the marks and exam details like code 
+<div align="center">
+  <h2>📝 License</h2>
+  <p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>
+</div>
+<div align="center">
+  <h2>👥 Contact</h2>
+  <p>
+    Your Name - <a href="https://twitter.com/yourtwitter">@yourtwitter</a> - email@example.com
+    <br>
+    Project Link: <a href="https://github.com/yourusername/coding-platform-frontend">https://github.com/yourusername/coding-platform-frontend</a>
+  </p>
+</div>
+<div align="center">
+  <h2>🙏 Acknowledgments</h2>
+  <ul style="list-style: none;">
+    <li><a href="https://angular.io/docs">Angular Documentation</a></li>
+    <li><a href="https://getbootstrap.com">Bootstrap</a></li>
+    <li>Code Compiler API Provider</li>
+  </ul>
+</div>

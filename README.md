@@ -71,7 +71,7 @@
 <summary>View Application Screenshots</summary>
 <div align="center">
   <h3>Screenshot 1</h3>
-  <img src="./screenshots/dashboard.png" alt="Dashboard" width="800"/>
+  <img src="./screenshots/1 (1).png" alt="Dashboard" width="800"/>
   <p><i>Main dashboard showing available coding challenges and user progress</i></p>
   <h3>Code Editor Interface</h3>
   <img src="./screenshots/code-editor.png" alt="Code Editor" width="800"/>
@@ -129,9 +129,9 @@ Open a Pull Request
 <div align="center">
   <h2>👥 Contact</h2>
   <p>
-    Your Name - <a href="https://twitter.com/yourtwitter">@yourtwitter</a> - email@example.com
+    Ankit Borude - ankitborude250@gmail.com
     <br>
-    Project Link: <a href="https://github.com/yourusername/coding-platform-frontend">https://github.com/yourusername/coding-platform-frontend</a>
+    Project Link: <a href="https://github.com/AnkitBorude/Coding-Exam-App">https://github.com/AnkitBorude/Coding-Exam-App</a>
   </p>
 </div>
 <div align="center">
@@ -139,6 +139,6 @@ Open a Pull Request
   <ul style="list-style: none;">
     <li><a href="https://angular.io/docs">Angular Documentation</a></li>
     <li><a href="https://getbootstrap.com">Bootstrap</a></li>
-    <li>Code Compiler API Provider</li>
+    <li>Code Compiler API <a href="https://ce.judge0.com/">Judge0 CE</li>
   </ul>
 </div>

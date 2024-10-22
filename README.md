@@ -117,17 +117,15 @@
   </tr>
 </table>
 <div align="center">
-  <h2>🔄 API Integration</h2>
-</div>
-<div align="center">
   <h2>🤝 Contributing</h2>
 </div>
-
-Fork the repository
-Create your feature branch <code>(git checkout -b feature/AmazingFeature)</code>
-Commit your changes <code>(git commit -m 'Add some AmazingFeature')</code>
-Push to the branch <code>(git push origin feature/AmazingFeature)</code>
-Open a Pull Request
+<div align="center">
+<h2>Fork the repository</h2>
+</div>
+<br>Create your feature branch <code>(git checkout -b feature/AmazingFeature)</code>
+<br>Commit your changes <code>(git commit -m 'Add some AmazingFeature')</code>
+<br>Push to the branch <code>(git push origin feature/AmazingFeature)</code>
+<br>Open a Pull Request
 
 <div align="center">
   <h2>📝 License</h2>

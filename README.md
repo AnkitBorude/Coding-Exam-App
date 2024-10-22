@@ -4,6 +4,7 @@
     <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular"/>
     <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
+    ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   </p>
   <p>A modern, responsive single-page application built with Angular for conducting coding assessments. This application provides an intuitive interface for users to take coding tests and get real-time feedback on their submissions.</p>
 </div>
@@ -119,14 +120,12 @@
 <div align="center">
   <h2>🤝 Contributing</h2>
 </div>
-<div align="center">
-<h2>Fork the repository</h2>
-</div>
+<h3>Fork the repository</h3>
 <ul>
-<li><br>Create your feature branch <code>(git checkout -b feature/AmazingFeature)</code></li>
-<li><br>Commit your changes <code>(git commit -m 'Add some AmazingFeature')</code></li>
-<li><br>Push to the branch <code>(git push origin feature/AmazingFeature)</code></li>
-<li><br>Open a Pull Request</li>
+<li>Create your feature branch <code>(git checkout -b feature/AmazingFeature)</code></li>
+<li>Commit your changes <code>(git commit -m 'Add some AmazingFeature')</code></li>
+<li>Push to the branch <code>(git push origin feature/AmazingFeature)</code></li>
+<li>Open a Pull Request</li>
 </ul>
 <div align="center">
   <h2>📝 License</h2>

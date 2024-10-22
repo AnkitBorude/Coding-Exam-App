@@ -4,7 +4,7 @@
     <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular"/>
     <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
-    ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="mit_licence"/>
   </p>
   <p>A modern, responsive single-page application built with Angular for conducting coding assessments. This application provides an intuitive interface for users to take coding tests and get real-time feedback on their submissions.</p>
 </div>

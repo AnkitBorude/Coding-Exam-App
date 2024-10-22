@@ -60,9 +60,8 @@
 <code>npm install</code>
 <li>Start the development server<br></li>
 <code>ng serve</code>
-<li>Access the application at http://localhost:4200</li>
+<li>Access the application at<code>http://localhost:4200</code></li>
 </ol>
-
 </details>
 <div align="center">
   <h2>📸 Screenshots</h2>
@@ -71,17 +70,25 @@
 <summary>View Application Screenshots</summary>
 <div align="center">
   <h3>Screenshot 1</h3>
-  <img src="./screenshots/1 (1).png" alt="Dashboard" width="800"/>
-  <p><i>Main dashboard showing available coding challenges and user progress</i></p>
-  <h3>Code Editor Interface</h3>
-  <img src="./screenshots/code-editor.png" alt="Code Editor" width="800"/>
-  <p><i>Interactive code editor with syntax highlighting and test case panel</i></p>
-  <h3>Results View</h3>
-  <img src="./screenshots/results.png" alt="Results" width="800"/>
-  <p><i>Detailed view of test case results and performance metrics</i></p>
-  <h3>Mobile View</h3>
-  <img src="./screenshots/mobile-view.png" alt="Mobile Interface" width="400"/>
-  <p><i>Responsive design adaptation for mobile devices</i></p>
+  <img src="./screenshots/1 (1).png" alt="Student Login" width="800"/>
+  <h3>Screenshot 2</h3>
+  <img src="./screenshots/2.png" alt="Screenshot" width="800"/>
+  <h3>Screenshot 3</h3>
+  <img src="./screenshots/3.png" alt="Screenshot" width="800"/>
+  <h3>Screenshot 4</h3>
+  <img src="./screenshots/4.png" alt="Screenshot" width="800"/>
+  <h3>Screenshot 5</h3>
+  <img src="./screenshots/5.png" alt="Screenshot" width="800"/>
+  <h3>Screenshot 6</h3>
+  <img src="./screenshots/6.png" alt="Screenshot" width="800"/>
+  <h3>Screenshot 7</h3>
+  <img src="./screenshots/7.png" alt="Screenshot" width="800"/>
+  <h3>Screenshot 8</h3>
+  <img src="./screenshots/8.png" alt="Screenshot" width="800"/>
+  <h3>Screenshot 9</h3>
+  <img src="./screenshots/9.png" alt="Screenshot" width="800"/>
+  <h3>Screenshot 10</h3>
+  <img src="./screenshots/10.png" alt="Screenshot" width="800"/>
 </div>
 </details>
 <div align="center">
@@ -117,9 +124,9 @@
 </div>
 
 Fork the repository
-Create your feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
+Create your feature branch <code>(git checkout -b feature/AmazingFeature)</code>
+Commit your changes <code>(git commit -m 'Add some AmazingFeature')</code>
+Push to the branch <code>(git push origin feature/AmazingFeature)</code>
 Open a Pull Request
 
 <div align="center">
@@ -129,7 +136,7 @@ Open a Pull Request
 <div align="center">
   <h2>👥 Contact</h2>
   <p>
-    Ankit Borude - ankitborude250@gmail.com
+   <strong> Ankit Borude - ankitborude250@gmail.com</strong>
     <br>
     Project Link: <a href="https://github.com/AnkitBorude/Coding-Exam-App">https://github.com/AnkitBorude/Coding-Exam-App</a>
   </p>

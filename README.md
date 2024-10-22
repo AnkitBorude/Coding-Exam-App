@@ -52,24 +52,16 @@
 </div>
 <details>
 <summary>Click to expand installation steps</summary>
-  <ol>
-<li>l>Clone the repository<br>
-  <code>
-git clone https://github.com/yourusername/coding-platform-frontend.git
-  </code><br></li>
-    <li>
-  <code>
-cd coding-platform-frontend
-  </code></li>
-    <li>
-Install dependencies<br><code>
-npm install</code></li>
-    <li>
-Start the development server<br>
+<ol>
+<li>Clone the repository<br></li>
+<code>git clone https://github.com/yourusername/coding-platform-frontend.git</code><br>
+<code>cd coding-platform-frontend</code>
+<li>Install dependencies<br></li>
+<code>npm install</code>
+<li>Start the development server<br></li>
 <code>ng serve</code>
-      <li>
-Access the application at http://localhost:4200</li>
-  </ol>
+<li>Access the application at http://localhost:4200</li>
+</ol>
 
 </details>
 <div align="center">
@@ -78,7 +70,7 @@ Access the application at http://localhost:4200</li>
 <details>
 <summary>View Application Screenshots</summary>
 <div align="center">
-  <h3>Dashboard</h3>
+  <h3>Screenshot 1</h3>
   <img src="./screenshots/dashboard.png" alt="Dashboard" width="800"/>
   <p><i>Main dashboard showing available coding challenges and user progress</i></p>
   <h3>Code Editor Interface</h3>
@@ -120,20 +112,6 @@ Access the application at http://localhost:4200</li>
 <div align="center">
   <h2>🔄 API Integration</h2>
 </div>
-<table align="center">
-  <tr>
-    <th>Endpoint</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>POST /compile</code></td>
-    <td>Sends code for compilation</td>
-  </tr>
-  <tr>
-    <td><code>GET /languages</code></td>
-    <td>Fetches supported languages</td>
-  </tr>
-</table>
 <div align="center">
   <h2>🤝 Contributing</h2>
 </div>

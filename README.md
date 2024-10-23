@@ -50,8 +50,6 @@
 <div align="center">
   <h2>🔧 Installation</h2>
 </div>
-<details>
-<summary>Click to expand installation steps</summary>
 <ol>
 <li>Clone the repository<br></li>
 <code>git clone https://github.com/AnkitBorude/Coding-Exam-App.git</code><br>
@@ -62,12 +60,9 @@
 <code>ng serve</code>
 <li>Access the application at<code>http://localhost:4200</code></li>
 </ol>
-</details>
 <div align="center">
   <h2>📸 Screenshots</h2>
 </div>
-<details>
-<summary>View Application Screenshots</summary>
 <div align="center">
   <h3>Screenshot 1</h3>
   <img src="./screenshots/1 (1).png" alt="Student Login" width="800"/>
@@ -90,7 +85,6 @@
   <h3>Screenshot 10</h3>
   <img src="./screenshots/10.png" alt="Screenshot" width="800"/>
 </div>
-</details>
 <div align="center">
   <h2>💻 Development Commands</h2>
 </div>
